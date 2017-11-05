@@ -8,6 +8,14 @@
 
 import UIKit
 
+/*
+ TODO
+ 1. 테이블, 콜렉션일 경우 여러개를 한번에 할 수 있도록 만들기
+ 2. 기울기 적용하기
+ 3. 색을 좀 더 커스텀 가능하도록 하기
+ 4. 라벨의 경우 한줄일 때 높이와 줄 수를 지정할 수 있게 하기
+ */
+
 struct Location {
     var start: CGPoint
     var end: CGPoint
@@ -50,12 +58,14 @@ public protocol Windless {
     var direction: WindlessDirection { get set }
     
     // gradient로 보여지는 부분의 모양 (대각선, 직선) default .diagonal
-    var shape: WindlessShape { get set }
+//    var shape: WindlessShape { get set }
     
     // gradient 속도
-    var animationSpeed: Float { get set }
+    var speed: Float { get set }
     
-    var animationDuration: CFTimeInterval { get set }
+    var beginTime: CFTimeInterval { get set }
+    
+    var duration: CFTimeInterval { get set }
     
     // 그라디언트 애니메이션이 지나가고 중간에 쉬는 시간
     var pauseDuration: CFTimeInterval { get set }
@@ -65,8 +75,11 @@ public protocol Windless {
     
     var animationLayerColor: UIColor { get set }
     
+    var animationBackgroundColor: UIColor { get set }
+    
     var animationLayerOpacity: CGFloat { get set}
     
+    // 이부분은 그냥 기본 background color 따라가는게 맞을듯
     var coverLayerColor: UIColor { get set }
     
     var cornerRadius: CGFloat { get set }

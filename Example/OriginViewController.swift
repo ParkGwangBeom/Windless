@@ -9,9 +9,8 @@
 import UIKit
 import Windless
 
-class ViewController: UIViewController {
+class OriginViewController: UIViewController {
 
-    @IBOutlet weak var toggleButton: UIBarButtonItem!
     @IBOutlet weak var windlessView: WindlessView!
     
     @IBOutlet weak var view1: UIImageView!
@@ -19,17 +18,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var view3: UILabel!
     @IBOutlet weak var view4: UIImageView!
     @IBOutlet weak var view5: UILabel!
-    
+    @IBOutlet weak var view6: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        windlessView.coverViews = [view1, view2, view3, view4, view5]
+        windlessView.coverViews = [view1, view2, view3, view4, view5, view6]
+        windlessView.windless = true
     }
     
-    
-    
-    @IBAction func toggle(_ sender: Any) {
+    @IBAction func tapped(_ sender: Any) {
         windlessView.windless = !windlessView.windless
     }
 }

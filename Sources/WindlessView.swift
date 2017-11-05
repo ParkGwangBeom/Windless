@@ -8,58 +8,41 @@
 
 import UIKit
 
-public class WindlessView: UIView {
-    
-    
-    
-    public override class var layerClass: AnyClass {
-        return WindlessLayer.self
-    }
+open class WindlessView: UIView {
     
     @IBInspectable
-    public var direction: Int = 0
+    open var direction: Int = 0
+    
+//    @IBInspectable
+//    open var shape: Int = 1
     
     @IBInspectable
-    public var shape: Int = 1
+    open var speed: Float = 1
     
     @IBInspectable
-    public var animationSpeed: Float = 1
+    open var beginTime: CGFloat = 0
     
     @IBInspectable
-    public var animationDuration: CGFloat = 1
+    open var duration: CGFloat = 4
     
     @IBInspectable
-    public var pauseDuration: CGFloat = 1
+    open var pauseDuration: CGFloat = 3
     
     @IBInspectable
-    public var animationLayerColor: UIColor = .groupTableViewBackground
+    open var animationLayerColor: UIColor = .white
     
     @IBInspectable
-    public var animationLayerOpacity: CGFloat = 0.8
+    open var animationBackgroundColor: UIColor = .groupTableViewBackground
     
     @IBInspectable
-    public var coverLayerColor: UIColor = .white
+    open var animationLayerOpacity: CGFloat = 0.8
+    
+    // 기본 백그라운드 색 따라가기로
+//    @IBInspectable
+//    open var coverLayerColor: UIColor = .white
     
     @IBInspectable
-    public var tleCornerRadius: CGFloat = 0
-    
-    
-    
-    
-    
-    public var coverViews: [UIView] = []
-    
-    
-    
-    // 이부분은 제거 하자
-    var allSubviews: [UIView] = []
-    
-    func logView(view: UIView) {
-        allSubviews.append(view)
-        for subview in view.subviews {
-            logView(view: subview)
-        }
-    }
+    open var tleCornerRadius: CGFloat = 0
     
     public var windless: Bool = false {
         didSet {
@@ -67,21 +50,39 @@ public class WindlessView: UIView {
         }
     }
     
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLayer()
+    public var coverViews: [UIView] = [] {
+        didSet {
+            setupConfiguration()
+            windlessLayer?.setup(windlessLayers: coverViews.flatMap { $0.layer })
+        }
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    open override class var layerClass: AnyClass {
+        return WindlessLayer.self
     }
     
-    public override func awakeFromNib() {
+    // 수정해야할지말지...
+    fileprivate var allViews: [UIView] = [] {
+        didSet {
+//            coverViews = allViews.filter{ $0.isWindless }
+        }
+    }
+    
+    fileprivate func loadAllViews(view: UIView) {
+        allViews.append(view)
+        for subview in view.subviews {
+            loadAllViews(view: subview)
+        }
+    }
+    
+    open override func awakeFromNib() {
         super.awakeFromNib()
-        setupLayer()
+        
+        // 수정할지 말지 결정해야할듯...
+        loadAllViews(view: self)
     }
     
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         layer.bounds = self.bounds
     }
@@ -93,30 +94,17 @@ private extension WindlessView {
         return layer as? WindlessLayer
     }
     
-    var configuration: WindlessConfiguration {
-        var configuration = WindlessConfiguration()
-        configuration.direction = WindlessDirection(rawValue: direction) ?? .right
-        configuration.shape = WindlessShape(rawValue: shape) ?? .straight
-        configuration.animationSpeed = animationSpeed
-        configuration.animationDuration = CFTimeInterval(animationDuration)
-        configuration.pauseDuration = CFTimeInterval(pauseDuration)
-        configuration.animationLayerColor = animationLayerColor
-        configuration.animationLayerOpacity = 0.8
-        configuration.coverLayerColor = coverLayerColor
-        configuration.cornerRadius = tleCornerRadius
-        return configuration
-    }
-    
-    func setupLayer() {
-        // TODO: 수정해야함
-        allSubviews.removeAll()
-        logView(view: self)
-        if coverViews.isEmpty {
-            windlessLayer?.windlessLayers = allSubviews.filter { $0.isWindless }.flatMap { $0.layer }
-        } else {
-            windlessLayer?.windlessLayers = coverViews.flatMap { $0.layer }
-        }
-        windlessLayer?.configuration = configuration
-        windlessLayer?.setupLayer()
+    func setupConfiguration() {
+        windlessLayer?.configuration.direction = WindlessDirection(rawValue: direction) ?? .right
+//        windlessLayer?.configuration.shape = WindlessShape(rawValue: shape) ?? .straight
+        windlessLayer?.configuration.speed = speed
+        windlessLayer?.configuration.beginTime = CFTimeInterval(beginTime)
+        windlessLayer?.configuration.duration = CFTimeInterval(duration)
+        windlessLayer?.configuration.pauseDuration = CFTimeInterval(pauseDuration)
+        windlessLayer?.configuration.animationLayerColor = animationLayerColor
+        windlessLayer?.configuration.animationBackgroundColor = animationBackgroundColor
+        windlessLayer?.configuration.animationLayerOpacity = 0.8
+        windlessLayer?.configuration.coverLayerColor = backgroundColor ?? .white
+        windlessLayer?.configuration.cornerRadius = tleCornerRadius
     }
 }

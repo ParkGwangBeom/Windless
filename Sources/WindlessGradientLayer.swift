@@ -9,13 +9,14 @@
 import UIKit
 
 class WindlessGradientLayer: CAGradientLayer {
-    
-    fileprivate var configuration: WindlessConfiguration = WindlessConfiguration()
-    
+
+    fileprivate struct AnimationKey {
+        static let location = "location_key"
+    }
+    fileprivate var configuration = WindlessConfiguration()
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
     override init() {
         super.init()
     }
@@ -23,28 +24,39 @@ class WindlessGradientLayer: CAGradientLayer {
     convenience init(frame: CGRect, configuration: WindlessConfiguration) {
         self.init()
         self.configuration = configuration
-        
-        startPoint = configuration.direction.location.start
-        endPoint = configuration.direction.location.end
-        colors = [configuration.animationLayerColor, UIColor.lightGray.withAlphaComponent(configuration.animationLayerOpacity), configuration.animationLayerColor]
-            .flatMap{ $0.cgColor }
-        locations = [-0.2, -0.1, 0.0]
-        
-        // TODO: background color색에 따라서 뒤에보이게끔도 가능할듯
-        backgroundColor = configuration.animationLayerColor.cgColor
+        prepare()
     }
+}
+
+// MARK: internal
+extension WindlessGradientLayer {
     
     func show() {
-        add(gradientAnimation(), forKey: locationAnimationKey)
+        add(gradientAnimation(), forKey: AnimationKey.location)
     }
     
     func hide() {
-        removeAnimation(forKey: locationAnimationKey)
+        removeAnimation(forKey: AnimationKey.location)
     }
-    
-    private let locationAnimationKey = "location_key"
 }
 
+// MARK: private
+private extension WindlessGradientLayer {
+    
+    func prepare() {
+        startPoint = configuration.direction.location.start
+        endPoint = configuration.direction.location.end
+        colors = [configuration.animationBackgroundColor,
+                  configuration.animationLayerColor.withAlphaComponent(configuration.animationLayerOpacity),
+                  configuration.animationBackgroundColor].flatMap{ $0.cgColor }
+        locations = [-0.2, -0.1, 0.0]
+        
+        // TODO: background color색에 따라서 뒤에보이게끔도 가능할듯
+        backgroundColor = configuration.animationBackgroundColor.cgColor
+    }
+}
+
+// MARK: Animation
 private extension WindlessGradientLayer {
     
     func gradientAnimation() -> CAAnimation {
@@ -53,13 +65,14 @@ private extension WindlessGradientLayer {
         // TODO: width 값 설정
         gradientAnimation.fromValue = [-0.2, -0.1, 0.0]
         gradientAnimation.toValue = [1.0, 1.1, 1.2]
-        gradientAnimation.duration = configuration.animationDuration
+        gradientAnimation.duration = configuration.duration
         
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [gradientAnimation]
-        groupAnimation.duration = configuration.animationDuration + configuration.pauseDuration
+        groupAnimation.beginTime = CACurrentMediaTime() + configuration.beginTime
+        groupAnimation.duration = configuration.duration + configuration.pauseDuration
         groupAnimation.repeatCount = Float.infinity
-        groupAnimation.speed = configuration.animationSpeed
+        groupAnimation.speed = configuration.speed
         
         return groupAnimation
     }
