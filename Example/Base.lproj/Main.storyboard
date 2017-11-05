@@ -142,6 +142,41 @@
                                     <constraint firstAttribute="trailing" secondItem="kDd-wm-28Y" secondAttribute="trailing" constant="20" id="jWR-Rt-EoB"/>
                                     <constraint firstItem="GwI-Py-Pr3" firstAttribute="top" secondItem="rz6-UO-ya8" secondAttribute="bottom" constant="20" id="tUt-zj-ts9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="animationColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="contentViewColor">
+                                        <color key="value" red="0.74509805439999999" green="0.15686275059999999" blue="0.074509806930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationSpeed">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="direction">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shape">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="animationLayerColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tleCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="coverLayerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationLayerOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="pauseDuration">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +197,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="toggleButton" destination="zf3-tz-CIY" id="qOL-8J-NhU"/>
-                        <outlet property="windlessView" destination="cAP-1T-SSs" id="Fig-ba-qQQ"/>
+                        <outlet property="view1" destination="Ure-eB-OIx" id="Qso-9G-R5n"/>
+                        <outlet property="view2" destination="rz6-UO-ya8" id="CVd-l4-xOC"/>
+                        <outlet property="view3" destination="LJg-eA-gNL" id="e1u-wB-AWG"/>
+                        <outlet property="view4" destination="GwI-Py-Pr3" id="ZHA-ub-uNf"/>
+                        <outlet property="view5" destination="R3F-0D-kAP" id="ywN-ds-Jhg"/>
+                        <outlet property="windlessView" destination="cAP-1T-SSs" id="RGr-hN-SG2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

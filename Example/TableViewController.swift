@@ -36,7 +36,7 @@ extension TableViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TestCell
         
         if flag {
-            cell.windView.hide()
+//            cell.windView.hide()
             cell.backgroundColor = UIColor.blue
         }
         
@@ -50,6 +50,6 @@ class TestCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        windView.show()
+//        windView.show()
     }
 }

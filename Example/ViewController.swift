@@ -14,14 +14,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var toggleButton: UIBarButtonItem!
     @IBOutlet weak var windlessView: WindlessView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBOutlet weak var view1: UIImageView!
+    @IBOutlet weak var view2: UILabel!
+    @IBOutlet weak var view3: UILabel!
+    @IBOutlet weak var view4: UIImageView!
+    @IBOutlet weak var view5: UILabel!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        windlessView.show()
+//        windlessView.coverViews = [view1, view2, view3, view4, view5]
     }
     
+    
+    
     @IBAction func toggle(_ sender: Any) {
-        toggleButton.title = windlessView.isAnimating ? "hide": "show"
-        windlessView.isAnimating ? windlessView.hide() : windlessView.show()
+        windlessView.windless = !windlessView.windless
     }
 }
