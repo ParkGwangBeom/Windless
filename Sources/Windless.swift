@@ -47,10 +47,10 @@ public enum WindlessDirection: Int {
     }
 }
 
-public enum WindlessShape: Int {
-    case diagonal
-    case straight
-}
+//public enum WindlessShape: Int {
+//    case diagonal
+//    case straight
+//}
 
 public protocol Windless {
     
