@@ -18,24 +18,21 @@ class CollectionViewController: UIViewController {
         setupView()
         windless?.windless = true
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
 
     func setupView() {
         let windless = WindlessView(frame: CGRect(x: 100, y: 100, width: 300, height: 300))
         windless.duration = 5
         windless.pauseDuration = 1
+        windless.beginTime = 2
+        windless.direction = 1
         view.addSubview(windless)
         self.windless = windless
         
-        let view1 = UIView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
+        let view1 = UIView(frame: CGRect(x: 10, y: 10, width: 100, height: 100))
         view1.backgroundColor = UIColor.red
         windless.addSubview(view1)
         
-        let view2 = UIView(frame: CGRect(x: 30, y: 50, width: 40, height: 30))
+        let view2 = UIView(frame: CGRect(x: 110, y: 110, width: 150, height: 150))
         view2.backgroundColor = UIColor.red
         windless.addSubview(view2)
         

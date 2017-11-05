@@ -79,8 +79,8 @@ public protocol Windless {
     
     var animationLayerOpacity: CGFloat { get set}
     
-    // 이부분은 그냥 기본 background color 따라가는게 맞을듯
-    var coverLayerColor: UIColor { get set }
+//     이부분은 그냥 기본 background color 따라가는게 맞을듯
+//    var coverLayerColor: UIColor { get set }
     
     var cornerRadius: CGFloat { get set }
 }

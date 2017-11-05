@@ -48,6 +48,24 @@ extension TableViewController: UITableViewDataSource {
 }
 
 class TestCell: UITableViewCell {
-  
+    
     @IBOutlet weak var windView: WindlessView!
+    
+    @IBOutlet weak var view1: UIImageView!
+    @IBOutlet weak var view2: UILabel!
+    @IBOutlet weak var view3: UILabel!
+    @IBOutlet weak var view4: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupWindless()
+    }
+    
+    func setupWindless() {
+        windView.tleCornerRadius = 5
+        windView.duration = 1.5
+        windView.pauseDuration = 2
+        windView.beginTime = 1
+        windView.coverViews = [view1, view2, view3, view4]
+    }
 }

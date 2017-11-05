@@ -304,6 +304,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="view1" destination="JNL-bP-5M3" id="j8P-2g-O70"/>
+                                            <outlet property="view2" destination="iPn-NA-tQn" id="dkN-Cq-ah5"/>
+                                            <outlet property="view3" destination="Jkc-ds-acJ" id="Fit-Ov-BSW"/>
+                                            <outlet property="view4" destination="gC6-uJ-QHh" id="IPj-15-TAy"/>
                                             <outlet property="windView" destination="Xj1-ep-73z" id="SXs-uc-4tD"/>
                                         </connections>
                                     </tableViewCell>
@@ -394,6 +398,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="view1" destination="TnW-jc-M5a" id="iqp-Zn-jp0"/>
+                                            <outlet property="view2" destination="NST-cU-b5V" id="RLr-gr-8KK"/>
+                                            <outlet property="view3" destination="Iiu-Ox-mz0" id="nNE-eL-HGy"/>
+                                            <outlet property="view4" destination="z6V-lb-RNI" id="VHb-vK-AcR"/>
                                             <outlet property="windView" destination="ReH-1Y-aVU" id="AKp-eg-LbB"/>
                                         </connections>
                                     </tableViewCell>

@@ -18,7 +18,8 @@ struct WindlessConfiguration: Windless {
     var animationLayerColor: UIColor = .white
     var animationBackgroundColor: UIColor = .groupTableViewBackground
     var animationLayerOpacity: CGFloat = 0.8
-    var coverLayerColor: UIColor = .white
     var cornerRadius: CGFloat = 4
+    
+    var coverLayerColor: UIColor = .white
 }
 
