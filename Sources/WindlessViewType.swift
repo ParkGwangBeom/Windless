@@ -56,6 +56,9 @@ extension WindlessViewType where Self: UIView {
     }
     
     public func windless(_ flag: Bool) {
+        if let view = self as? UIScrollView {
+            view.isScrollEnabled = !flag
+        }
         setupConfiguration()
         layoutIfNeeded()
         windlessLayer?.setup(windlessLayers: windlessableViews.flatMap{ $0.layer })
