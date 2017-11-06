@@ -523,15 +523,15 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="3j2-p4-btZ" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leadingMargin" constant="10" id="6zJ-4x-wNa"/>
+                                            <constraint firstAttribute="trailing" secondItem="3j2-p4-btZ" secondAttribute="trailing" constant="10" id="Dgv-GY-PN8"/>
                                             <constraint firstItem="rQj-VQ-3WR" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leading" constant="10" id="J7v-QZ-zcn"/>
                                             <constraint firstItem="rQj-VQ-3WR" firstAttribute="top" secondItem="3j2-p4-btZ" secondAttribute="bottom" constant="8" id="Lod-d0-iO2"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="3j2-p4-btZ" secondAttribute="trailing" constant="10" id="SN1-yp-qYd"/>
                                             <constraint firstItem="3j2-p4-btZ" firstAttribute="top" secondItem="vpS-qo-OwC" secondAttribute="bottom" constant="8" id="Ucr-qx-U9c"/>
                                             <constraint firstAttribute="trailing" secondItem="vpS-qo-OwC" secondAttribute="trailing" constant="10" id="WgS-cr-gVH"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="top" secondItem="olb-HO-69x" secondAttribute="top" constant="10" id="rlF-GU-gMC"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leading" constant="10" id="soV-v3-vvZ"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="centerX" secondItem="olb-HO-69x" secondAttribute="centerX" id="wTQ-MF-FLt"/>
+                                            <constraint firstItem="3j2-p4-btZ" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leading" constant="10" id="yBV-uv-kkp"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
