@@ -11,26 +11,31 @@ import Windless
 
 class TableViewController: UIViewController {
     @IBOutlet weak var tableView: WindlessTableView!
-    var randoms: [Int] = []
+    lazy var randoms: [Int] = {
+        var values: [Int] = []
+        for _ in 0..<10 {
+            let random = arc4random() % 2
+            values.append(Int(random))
+        }
+        return values
+    }()
+    
+    var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Table"
-        
-        for _ in 0..<10 {
-            let random = arc4random() % 2
-            randoms.append(Int(random))
-        }
-        
-        tableView.windless(true)
+        tableView.windless(flag)
     }
     
     @IBAction func tapped(_ sender: Any) {
-        tableView.windless(false)
+        flag = !flag
+        tableView.windless(flag)
     }
 }
 
 extension TableViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }

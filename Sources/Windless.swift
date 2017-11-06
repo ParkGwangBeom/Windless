@@ -2,7 +2,7 @@
 //  Windless.swift
 //  Windless
 //
-//  Created by gwangbeom on {TODAY}.
+//  Created by gwangbeom on 2017. 11. 5..
 //  Copyright © 2017년 Windless. All rights reserved.
 //
 
@@ -10,10 +10,10 @@ import UIKit
 
 /*
  TODO
- 1. 테이블, 콜렉션일 경우 여러개를 한번에 할 수 있도록 만들기
- 2. 기울기 적용하기
- 3. 색을 좀 더 커스텀 가능하도록 하기
- 4. 라벨의 경우 한줄일 때 높이와 줄 수를 지정할 수 있게 하기
+ - 기울기 적용하기
+ - 넓이 계산하기
+ - 색을 좀 더 커스텀 가능하도록 하기
+ - 라벨의 경우 한줄일 때 높이와 줄 수를 지정할 수 있게 하기
  */
 
 struct Location {
@@ -52,7 +52,7 @@ public enum WindlessDirection: Int {
 //    case straight
 //}
 
-public protocol Windless {
+protocol Windless {
     
     // gradient가 표현되는 부분 default .right
     var direction: WindlessDirection { get set }
@@ -84,4 +84,3 @@ public protocol Windless {
     
     var cornerRadius: CGFloat { get set }
 }
-

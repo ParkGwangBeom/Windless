@@ -2,7 +2,7 @@
 //  WindlessViewType.swift
 //  Windless-iOS
 //
-//  Created by NAVER on 2017. 11. 6..
+//  Created by gwangbeom on 2017. 11. 6..
 //  Copyright © 2017년 Windless. All rights reserved.
 //
 
@@ -18,7 +18,6 @@ public protocol WindlessViewType {
     var animationBackgroundColor: UIColor { get set }
     var animationLayerOpacity: CGFloat { get set }
     var tleCornerRadius: CGFloat { get set }
-    
     var windlessableViews: [UIView] { get }
 }
 
@@ -61,5 +60,20 @@ extension WindlessViewType where Self: UIView {
         layoutIfNeeded()
         windlessLayer?.setup(windlessLayers: windlessableViews.flatMap{ $0.layer })
         windlessLayer?.windless = flag
+    }
+}
+
+private let key = "isWindless_Key"
+
+public extension UIView {
+    
+    @IBInspectable
+    var isWindless: Bool {
+        get {
+            return layer.value(forKey: key) as? Bool ?? false
+        }
+        set {
+            layer.setValue(newValue, forKey: key)
+        }
     }
 }

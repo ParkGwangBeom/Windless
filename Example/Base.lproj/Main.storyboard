@@ -205,7 +205,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="78" y="-104"/>
+            <point key="canvasLocation" x="-1519" y="901"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Ygr-5C-oxr">
@@ -304,6 +304,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="Xj1-ep-73z" secondAttribute="trailing" id="K9k-gD-nGa"/>
                                                 <constraint firstItem="Xj1-ep-73z" firstAttribute="top" secondItem="Q6M-fW-m7a" secondAttribute="top" id="dIC-6K-UtC"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindless" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="view1" destination="JNL-bP-5M3" id="j8P-2g-O70"/>
@@ -419,6 +422,9 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="duration">
                                         <real key="value" value="0.80000000000000004"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tleCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="haj-Nj-NZw" id="wl0-g6-3y2"/>
@@ -449,7 +455,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="77.599999999999994" y="596.85157421289364"/>
+            <point key="canvasLocation" x="-815" y="901"/>
         </scene>
         <!--Collection View Controller-->
         <scene sceneID="nYc-Bh-kxh">
@@ -514,49 +520,24 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isWindless" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDN-EP-vBS">
-                                                    <rect key="frame" x="76" y="127" width="62" height="21"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUb-PN-lBY">
-                                                            <rect key="frame" x="5" y="5" width="52" height="11"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="oUb-PN-lBY" secondAttribute="bottom" constant="5" id="1Fv-II-bg0"/>
-                                                        <constraint firstItem="oUb-PN-lBY" firstAttribute="top" secondItem="xDN-EP-vBS" secondAttribute="top" constant="5" id="27d-10-d4O"/>
-                                                        <constraint firstAttribute="trailing" secondItem="oUb-PN-lBY" secondAttribute="trailing" constant="5" id="F2Z-Jp-18F"/>
-                                                        <constraint firstItem="oUb-PN-lBY" firstAttribute="leading" secondItem="xDN-EP-vBS" secondAttribute="leading" constant="5" id="hWE-Zw-JYY"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isWindless" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="xDN-EP-vBS" secondAttribute="bottom" constant="10" id="38m-CI-a4f"/>
                                             <constraint firstItem="3j2-p4-btZ" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leadingMargin" constant="10" id="6zJ-4x-wNa"/>
                                             <constraint firstItem="rQj-VQ-3WR" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leading" constant="10" id="J7v-QZ-zcn"/>
                                             <constraint firstItem="rQj-VQ-3WR" firstAttribute="top" secondItem="3j2-p4-btZ" secondAttribute="bottom" constant="8" id="Lod-d0-iO2"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="3j2-p4-btZ" secondAttribute="trailing" constant="10" id="SN1-yp-qYd"/>
                                             <constraint firstItem="3j2-p4-btZ" firstAttribute="top" secondItem="vpS-qo-OwC" secondAttribute="bottom" constant="8" id="Ucr-qx-U9c"/>
                                             <constraint firstAttribute="trailing" secondItem="vpS-qo-OwC" secondAttribute="trailing" constant="10" id="WgS-cr-gVH"/>
-                                            <constraint firstAttribute="trailing" secondItem="xDN-EP-vBS" secondAttribute="trailing" constant="30" id="c0K-18-kFv"/>
-                                            <constraint firstItem="xDN-EP-vBS" firstAttribute="leading" secondItem="rQj-VQ-3WR" secondAttribute="trailing" constant="26" id="cQp-kg-Dzo"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="top" secondItem="olb-HO-69x" secondAttribute="top" constant="10" id="rlF-GU-gMC"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="leading" secondItem="olb-HO-69x" secondAttribute="leading" constant="10" id="soV-v3-vvZ"/>
                                             <constraint firstItem="vpS-qo-OwC" firstAttribute="centerX" secondItem="olb-HO-69x" secondAttribute="centerX" id="wTQ-MF-FLt"/>
-                                            <constraint firstItem="xDN-EP-vBS" firstAttribute="top" secondItem="3j2-p4-btZ" secondAttribute="bottom" constant="8" id="zIv-cx-E29"/>
                                         </constraints>
                                     </collectionViewCell>
                                 </cells>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="direction">
-                                        <integer key="value" value="1"/>
+                                        <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="beginTime">
                                         <real key="value" value="4"/>
@@ -570,6 +551,9 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="animationLayerColor">
                                         <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="tleCornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="1kJ-gU-sz6" id="rGe-4Q-RkM"/>
@@ -578,6 +562,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="MtH-Gk-D7N" firstAttribute="trailing" secondItem="mW7-Ok-7p4" secondAttribute="trailing" id="PPf-Xe-f9r"/>
                             <constraint firstItem="MtH-Gk-D7N" firstAttribute="bottom" secondItem="mW7-Ok-7p4" secondAttribute="bottom" id="Yhd-QE-YVn"/>
@@ -585,14 +570,22 @@
                             <constraint firstItem="mW7-Ok-7p4" firstAttribute="top" secondItem="MtH-Gk-D7N" secondAttribute="top" id="lo0-Xp-2EG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MtH-Gk-D7N"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="ZgH-YD-a7B" appends="YES" id="nkX-hq-O7e"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="mW7-Ok-7p4" id="rQw-3q-WwM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKX-FG-YlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZgH-YD-a7B">
+                    <connections>
+                        <action selector="tapped:" destination="1kJ-gU-sz6" id="6P4-GU-YgW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-815.20000000000005" y="900.89955022488766"/>
+            <point key="canvasLocation" x="-100" y="901"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xxv-Q7-zWd">

@@ -26,23 +26,21 @@ class WindlessLayer: CALayer {
             guard oldValue != windless else {
                 return
             }
-            
-            // TODO: 수정해야할듯.. 현재 애니메이션을 끌때 번져가는 것같은 오류 있음.
+
             CATransaction.begin()
             CATransaction.setAnimationDuration(0.4)
             CATransaction.setCompletionBlock {
                 self.windless ? self.gradientLayer.show() : self.gradientLayer.hide()
             }
-            gradientLayer.isHidden = !windless
-            coverLayer.isHidden = !windless
+            let alpha: Float = windless ? 1 : 0
+            gradientLayer.opacity = alpha
+            coverLayer.opacity = alpha
             CATransaction.commit()
         }
     }
     
     override func layoutSublayers() {
         super.layoutSublayers()
-
-//        layoutIfNeeded() // 이부분은 allValue방법 쓸때 in view에 들어간 프레임 맞춰줄려고 써줘야함
         setupPosition()
         setupMaskLayer()
     }
@@ -78,11 +76,11 @@ private extension WindlessLayer {
     }
 
     func setupSublayers() {
-        gradientLayer.isHidden = true
+        guard let sublayers = sublayers, !sublayers.contains(gradientLayer) else {
+            return
+        }
         addSublayer(gradientLayer)
-        
         coverLayer.backgroundColor = configuration.coverLayerColor.cgColor
-        coverLayer.isHidden = true
         addSublayer(coverLayer)
     }
     

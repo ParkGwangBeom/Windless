@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A11793B1FAEC5C700164FC4 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A11793A1FAEC5C700164FC4 /* Utils.swift */; };
 		4A1179411FAEEFA000164FC4 /* WindlessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179401FAEEFA000164FC4 /* WindlessLayer.swift */; };
 		4A1179431FAEFCC700164FC4 /* WindlessConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */; };
 		4A1179451FAF1EBB00164FC4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179441FAF1EBB00164FC4 /* ListViewController.swift */; };
@@ -23,6 +22,9 @@
 		4AA57E0C1FA1DE1300B903EA /* WindlessGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA57E0B1FA1DE1300B903EA /* WindlessGradientLayer.swift */; };
 		4AA57E101FA21BB200B903EA /* Windless.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Windless.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AA57E571FA228AB00B903EA /* WindlessView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4A1C00B01FA10077006DEA4C /* WindlessView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		4AB620FA1FB09EC7003473C5 /* WindlessViewType.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4AF5CE441FAFFD0A00761BE9 /* WindlessViewType.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		4AB620FB1FB09EC7003473C5 /* WindlessTableView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4AF5CE401FAF73C500761BE9 /* WindlessTableView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		4AB620FC1FB09EC7003473C5 /* WindlessCollectionView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4AF5CE421FAF767800761BE9 /* WindlessCollectionView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		4AF5CE3F1FAF443700761BE9 /* Windless.swift in Headers */ = {isa = PBXBuildFile; fileRef = 8933C7841EB5B820000D00A4 /* Windless.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		4AF5CE411FAF73C500761BE9 /* WindlessTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5CE401FAF73C500761BE9 /* WindlessTableView.swift */; };
 		4AF5CE431FAF767800761BE9 /* WindlessCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF5CE421FAF767800761BE9 /* WindlessCollectionView.swift */; };
@@ -64,7 +66,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4A11793A1FAEC5C700164FC4 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4A1179401FAEEFA000164FC4 /* WindlessLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindlessLayer.swift; sourceTree = "<group>"; };
 		4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindlessConfiguration.swift; sourceTree = "<group>"; };
 		4A1179441FAF1EBB00164FC4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +175,6 @@
 		8933C7811EB5B7E0000D00A4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4A11793A1FAEC5C700164FC4 /* Utils.swift */,
 				8933C7841EB5B820000D00A4 /* Windless.swift */,
 				4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */,
 				4A1179401FAEEFA000164FC4 /* WindlessLayer.swift */,
@@ -219,8 +219,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AA57E571FA228AB00B903EA /* WindlessView.swift in Headers */,
 				4AF5CE3F1FAF443700761BE9 /* Windless.swift in Headers */,
+				4AB620FA1FB09EC7003473C5 /* WindlessViewType.swift in Headers */,
+				4AA57E571FA228AB00B903EA /* WindlessView.swift in Headers */,
+				4AB620FB1FB09EC7003473C5 /* WindlessTableView.swift in Headers */,
+				4AB620FC1FB09EC7003473C5 /* WindlessCollectionView.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +382,6 @@
 				4A1C00B11FA10077006DEA4C /* WindlessView.swift in Sources */,
 				4A1179431FAEFCC700164FC4 /* WindlessConfiguration.swift in Sources */,
 				4AA57E0C1FA1DE1300B903EA /* WindlessGradientLayer.swift in Sources */,
-				4A11793B1FAEC5C700164FC4 /* Utils.swift in Sources */,
 				4AF5CE431FAF767800761BE9 /* WindlessCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

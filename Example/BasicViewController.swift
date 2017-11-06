@@ -27,7 +27,7 @@ class BasicViewController: UIViewController {
         self.title = "Basic"
         
         // 고민중...
-//        windlessView.container = [view1, view2, view3, view4]
+        windlessView.container = [view1, view2, view3, view4, view5, view6]
         windlessView.windless(flag)
     }
     

@@ -10,7 +10,6 @@ import UIKit
 
 struct WindlessConfiguration: Windless {
     var direction: WindlessDirection = .right
-//    var shape: WindlessShape = .straight
     var speed: Float = 1
     var beginTime: CFTimeInterval = 0
     var duration: CFTimeInterval = 4

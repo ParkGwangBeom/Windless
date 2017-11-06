@@ -2,7 +2,7 @@
 //  WindlessCollectionView.swift
 //  Windless-iOS
 //
-//  Created by NAVER on 2017. 11. 6..
+//  Created by gwangbeom on 2017. 11. 6..
 //  Copyright © 2017년 Windless. All rights reserved.
 //
 

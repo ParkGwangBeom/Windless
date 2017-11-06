@@ -44,15 +44,16 @@ open class WindlessView: UIView, WindlessViewType {
     @IBInspectable
     open var tleCornerRadius: CGFloat = 0
     
-    private var isContainer = false
+    // view쪽만 설정 가능하도록
+    private var useContainer = false
     public var container: [UIView] = [] {
         didSet {
-            isContainer = true
+            useContainer = true
         }
     }
     
     public var windlessableViews: [UIView] {
-        return isContainer ? container: windlessableSubviews(of: self)
+        return useContainer ? container: windlessableSubviews(of: self)
     }
     
     open override class var layerClass: AnyClass {
