@@ -1,20 +1,17 @@
 //
-//  Windless.swift
-//  Windless
+//  WindlessCollectionView.swift
+//  Windless-iOS
 //
-//  Created by gwangbeom on 2017. 10. 26..
+//  Created by NAVER on 2017. 11. 6..
 //  Copyright © 2017년 Windless. All rights reserved.
 //
 
 import UIKit
 
-open class WindlessView: UIView, WindlessViewType {
+open class WindlessCollectionView: UICollectionView, WindlessViewType {
     
     @IBInspectable
     open var direction: Int = 0
-    
-//    @IBInspectable
-//    open var shape: Int = 1
     
     @IBInspectable
     open var speed: Float = 1
@@ -37,23 +34,8 @@ open class WindlessView: UIView, WindlessViewType {
     @IBInspectable
     open var animationLayerOpacity: CGFloat = 0.8
     
-    // 기본 백그라운드 색 따라가기로
-//    @IBInspectable
-//    open var coverLayerColor: UIColor = .white
-    
     @IBInspectable
     open var tleCornerRadius: CGFloat = 0
-    
-    private var isContainer = false
-    public var container: [UIView] = [] {
-        didSet {
-            isContainer = true
-        }
-    }
-    
-    public var windlessableViews: [UIView] {
-        return isContainer ? container: windlessableSubviews(of: self)
-    }
     
     open override class var layerClass: AnyClass {
         return WindlessLayer.self
@@ -64,3 +46,4 @@ open class WindlessView: UIView, WindlessViewType {
         layer.bounds = self.bounds
     }
 }
+

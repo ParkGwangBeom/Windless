@@ -21,6 +21,10 @@ class WindlessGradientLayer: CAGradientLayer {
         super.init()
     }
     
+    override init(layer: Any) {
+        super.init(layer: layer)
+    }
+    
     convenience init(frame: CGRect, configuration: WindlessConfiguration) {
         self.init()
         self.frame = frame
@@ -50,7 +54,7 @@ private extension WindlessGradientLayer {
         colors = [configuration.animationBackgroundColor,
                   configuration.animationLayerColor.withAlphaComponent(configuration.animationLayerOpacity),
                   configuration.animationBackgroundColor].flatMap{ $0.cgColor }
-        locations = [-0.2, -0.1, 0.0]
+        locations = [-0.4, -0.2, 0.0]
         
         // TODO: background color색에 따라서 뒤에보이게끔도 가능할듯
         backgroundColor = configuration.animationBackgroundColor.cgColor
@@ -64,8 +68,8 @@ private extension WindlessGradientLayer {
         let gradientAnimation = CABasicAnimation(keyPath: "locations")
         
         // TODO: width 값 설정
-        gradientAnimation.fromValue = [-0.2, -0.1, 0.0]
-        gradientAnimation.toValue = [1.0, 1.1, 1.2]
+        gradientAnimation.fromValue = [-0.4, -0.2, 0.0]
+        gradientAnimation.toValue = [1.0, 1.2, 1.4]
         gradientAnimation.duration = configuration.duration
         
         let groupAnimation = CAAnimationGroup()

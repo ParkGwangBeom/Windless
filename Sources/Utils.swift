@@ -8,9 +8,10 @@
 
 import UIKit
 
-// TODO: 이부분은 변경 예정...
-private let key = "isWindless"
+private let key = "isWindless_Key"
+
 public extension UIView {
+    
     @IBInspectable
     var isWindless: Bool {
         get {

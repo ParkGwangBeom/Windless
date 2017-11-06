@@ -20,15 +20,19 @@ class BasicViewController: UIViewController {
     @IBOutlet weak var view5: UILabel!
     @IBOutlet weak var view6: UILabel!
     
+    var flag = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Basic"
         
-        windlessView.coverViews = [view1, view2, view3, view4, view5, view6]
-        windlessView.windless = true
+        // 고민중...
+//        windlessView.container = [view1, view2, view3, view4]
+        windlessView.windless(flag)
     }
     
     @IBAction func tapped(_ sender: Any) {
-        windlessView.windless = !windlessView.windless
+        flag = !flag
+        windlessView.windless(flag)
     }
 }
