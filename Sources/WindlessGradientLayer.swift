@@ -13,10 +13,13 @@ class WindlessGradientLayer: CAGradientLayer {
     fileprivate struct AnimationKey {
         static let location = "location_key"
     }
+    
     fileprivate var configuration = WindlessConfiguration()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
     override init() {
         super.init()
     }
