@@ -9,7 +9,7 @@
 import UIKit
 import Windless
 
-class OriginViewController: UIViewController {
+class BasicViewController: UIViewController {
 
     @IBOutlet weak var windlessView: WindlessView!
     
@@ -22,6 +22,7 @@ class OriginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Basic"
         
         windlessView.coverViews = [view1, view2, view3, view4, view5, view6]
         windlessView.windless = true

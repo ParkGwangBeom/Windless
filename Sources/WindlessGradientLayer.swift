@@ -23,6 +23,7 @@ class WindlessGradientLayer: CAGradientLayer {
     
     convenience init(frame: CGRect, configuration: WindlessConfiguration) {
         self.init()
+        self.frame = frame
         self.configuration = configuration
         prepare()
     }

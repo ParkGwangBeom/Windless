@@ -9,12 +9,12 @@
 import UIKit
 
 enum Items: String {
-    case origin
+    case basic
     case table
     case collection
     
     static var all: [Items] {
-        return [.origin, .table, .collection]
+        return [.basic, .table, .collection]
     }
 }
 
@@ -22,6 +22,7 @@ class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Examples"
     }
 }
 
@@ -42,6 +43,7 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: Items.all[indexPath.row].rawValue, sender: nil)
     }
 }
