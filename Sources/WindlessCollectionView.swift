@@ -26,13 +26,13 @@ open class WindlessCollectionView: UICollectionView, WindlessViewType {
     open var pauseDuration: CGFloat = 3
     
     @IBInspectable
-    open var animationLayerColor: UIColor = .white
+    open var animationLayerColor: UIColor = .lightGray
     
     @IBInspectable
     open var animationBackgroundColor: UIColor = .groupTableViewBackground
     
     @IBInspectable
-    open var animationLayerOpacity: CGFloat = 0.8
+    open var animationLayerOpacity: CGFloat = 0.5
     
     @IBInspectable
     open var tleCornerRadius: CGFloat = 0

@@ -35,7 +35,7 @@ extension WindlessViewType where Self: UIView {
         windlessLayer?.configuration.pauseDuration = CFTimeInterval(pauseDuration)
         windlessLayer?.configuration.animationLayerColor = animationLayerColor
         windlessLayer?.configuration.animationBackgroundColor = animationBackgroundColor
-        windlessLayer?.configuration.animationLayerOpacity = 0.8
+        windlessLayer?.configuration.animationLayerOpacity = animationLayerOpacity
         windlessLayer?.configuration.coverLayerColor = backgroundColor ?? .white
         windlessLayer?.configuration.cornerRadius = tleCornerRadius
     }
