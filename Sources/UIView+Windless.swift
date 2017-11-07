@@ -12,7 +12,7 @@ public extension UIView {
     
     private struct AssociatedKeys {
         static var isWindlessableKey    = "isWindlessableKey"
-        static var windlessLayerKey = "WindlessLayerKey"
+        static var windlessKey = "windlessKey"
     }
     
     @IBInspectable var isWindlessable: Bool {
@@ -21,9 +21,9 @@ public extension UIView {
     }
     
     var windless: Windless {
-        guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windlessLayerKey) as? Windless else {
+        guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windlessKey) as? Windless else {
             let windless = Windless(contentsView: self)
-            objc_setAssociatedObject(self, &AssociatedKeys.windlessLayerKey, windless, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.windlessKey, windless, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return windless
         }
         return windless
