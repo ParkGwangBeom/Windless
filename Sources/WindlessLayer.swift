@@ -41,7 +41,7 @@ class WindlessLayer: CALayer {
 // MARK: internal
 extension WindlessLayer {
     
-    func updateGradient() {
+    func updateGradientLayer() {
         gradientLayer?.update()
     }
     
@@ -97,7 +97,7 @@ private extension WindlessLayer {
     }
 
     func setupSublayersPosition() {
-        coverLayer?.frame = bounds
         gradientLayer?.frame = bounds
+        coverLayer?.frame = bounds
     }
 }

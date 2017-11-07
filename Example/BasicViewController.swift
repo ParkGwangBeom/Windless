@@ -24,11 +24,11 @@ class BasicViewController: UIViewController {
         self.title = "Basic"
         
         view.windless
-            .setupContainer([view1, view2, view3, view4, view5, view6])
+            .setupWindlessableViews([view1, view2, view3, view4, view5, view6])
             .apply {
-                $0?.beginTime = 1
-                $0?.duration = 3
-                $0?.animationLayerOpacity = 0.5
+                $0.beginTime = 1
+                $0.duration = 3
+                $0.animationLayerOpacity = 0.5
             }
             .start()
         

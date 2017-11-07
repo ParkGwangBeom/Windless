@@ -35,7 +35,7 @@ private extension Windless {
     }
     
     func updateLayer() {
-        windlessLayer?.updateGradient()
+        windlessLayer?.updateGradientLayer()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
         windlessLayer?.updateWindlessableLayers(windlessableSubviews(of: contentsView).flatMap{ $0.layer })
     }
@@ -58,13 +58,13 @@ private extension Windless {
 public extension Windless {
     
     @discardableResult
-    func apply(_ config: (WindlessConfiguration?) -> Void) -> Self {
+    func apply(_ config: (WindlessConfiguration) -> Void) -> Self {
         config(configuration)
         return self
     }
     
     @discardableResult
-    func setupContainer(_ views: [UIView]) -> Self {
+    func setupWindlessableViews(_ views: [UIView]) -> Self {
         views.forEach { $0.isWindlessable = true }
         return self
     }
