@@ -11,18 +11,18 @@ import Windless
 
 class CollectionViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: WindlessCollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     var flag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "collection"
-        collectionView.windless(flag)
+        self.title = "Collection"
+        collectionView.windless.start()
     }
     
     @IBAction func tapped(_ sender: Any) {
         flag = !flag
-        collectionView.windless(flag)
+        flag ? collectionView.windless.start() : collectionView.windless.end()
     }
 }
 

@@ -14,25 +14,28 @@ class WindlessGradientLayer: CAGradientLayer {
         static let location = "location_key"
     }
     
-    fileprivate var configuration = WindlessConfiguration()
+    fileprivate var configuration: WindlessConfiguration
     
     required init?(coder aDecoder: NSCoder) {
+        configuration = WindlessConfiguration()
         super.init(coder: aDecoder)
     }
     
     override init() {
+        configuration = WindlessConfiguration()
         super.init()
     }
     
     override init(layer: Any) {
+        configuration = WindlessConfiguration()
         super.init(layer: layer)
     }
     
-    convenience init(frame: CGRect, configuration: WindlessConfiguration) {
+    convenience required init(frame: CGRect, configuration: WindlessConfiguration) {
         self.init()
         self.frame = frame
         self.configuration = configuration
-        prepare()
+        update()
     }
 }
 
@@ -48,10 +51,9 @@ extension WindlessGradientLayer {
     }
 }
 
-// MARK: private
-private extension WindlessGradientLayer {
+extension WindlessGradientLayer {
     
-    func prepare() {
+    func update() {
         startPoint = configuration.direction.location.start
         endPoint = configuration.direction.location.end
         colors = [configuration.animationBackgroundColor,
@@ -78,13 +80,14 @@ private extension WindlessGradientLayer {
 //        gradientAnimation.toValue = [1.0, 1.8, 2]
         gradientAnimation.toValue = [1.0, 2.5, 3]
         gradientAnimation.duration = configuration.duration
-        
+
         let groupAnimation = CAAnimationGroup()
         groupAnimation.animations = [gradientAnimation]
         groupAnimation.beginTime = CACurrentMediaTime() + configuration.beginTime
         groupAnimation.duration = configuration.duration + configuration.pauseDuration
         groupAnimation.repeatCount = Float.infinity
         groupAnimation.speed = configuration.speed
+        groupAnimation.timingFunction = configuration.timingFuction
         
         return groupAnimation
     }

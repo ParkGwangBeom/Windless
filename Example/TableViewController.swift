@@ -10,7 +10,9 @@ import UIKit
 import Windless
 
 class TableViewController: UIViewController {
-    @IBOutlet weak var tableView: WindlessTableView!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     lazy var randoms: [Int] = {
         var values: [Int] = []
         for _ in 0..<10 {
@@ -25,12 +27,12 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Table"
-        tableView.windless(flag)
+        tableView.windless.start()
     }
     
     @IBAction func tapped(_ sender: Any) {
         flag = !flag
-        tableView.windless(flag)
+        flag ? tableView.windless.start() : tableView.windless.end()
     }
 }
 

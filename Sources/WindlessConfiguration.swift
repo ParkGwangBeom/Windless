@@ -8,17 +8,18 @@
 
 import UIKit
 
-struct WindlessConfiguration: Windless {
-    var direction: WindlessDirection = .right
-    var speed: Float = 1
-    var beginTime: CFTimeInterval = 0
-    var duration: CFTimeInterval = 4
-    var pauseDuration: CFTimeInterval = 2
-    var animationLayerColor: UIColor = .white
-    var animationBackgroundColor: UIColor = .groupTableViewBackground
-    var animationLayerOpacity: CGFloat = 0.8
-    var cornerRadius: CGFloat = 4
+public class WindlessConfiguration: WindlessType {
+    public var direction: WindlessDirection = .rightDiagonal
+    public var speed: Float = 1
+    public var beginTime: CFTimeInterval = 0
+    public var duration: CFTimeInterval = 4
+    public var pauseDuration: CFTimeInterval = 2
+    public var timingFuction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+    public var animationLayerColor: UIColor = .lightGray
+    public var animationBackgroundColor: UIColor = .groupTableViewBackground
+    public var animationLayerOpacity: CGFloat = 0.8
+    public var cornerRadius: CGFloat = 4
     
     var coverLayerColor: UIColor = .white
 }
-
