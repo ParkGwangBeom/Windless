@@ -1,4 +1,4 @@
-- Windless 이미지
+# Windless
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/Hero.svg?style=flat)](http://cocoapods.org/pods/Hero)
@@ -8,7 +8,9 @@
 [![License](https://img.shields.io/cocoapods/l/Hero.svg?style=flat)](https://github.com/lkzhao/Hero/blob/master/LICENSE?raw=true)
 
 Windless makes it easy to implement invisible layout indicators.
-- gif이미지
+
+![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/sample.gif)
+
 
 ## Contents
 
