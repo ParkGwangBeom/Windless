@@ -11,7 +11,7 @@ import UIKit
 public extension UIView {
     
     private struct AssociatedKeys {
-        static var isWindlessableKey    = "isWindlessableKey"
+        static var isWindlessableKey = "isWindlessableKey"
         static var windlessKey = "windlessKey"
     }
     
