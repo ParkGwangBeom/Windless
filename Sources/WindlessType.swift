@@ -72,28 +72,3 @@ protocol WindlessType {
     
     var cornerRadius: CGFloat { get set }
 }
-
-private let WindlessableKey = "isWindless_Key"
-private let WindlessKey = "Windless_Key"
-
-public extension UIView {
-    
-    @IBInspectable
-    var isWindlessable: Bool {
-        get {
-            return layer.value(forKey: WindlessableKey) as? Bool ?? false
-        }
-        set {
-            layer.setValue(newValue, forKey: WindlessableKey)
-        }
-    }
-    
-    var windless: Windless {
-        guard let windless = layer.value(forKey: WindlessKey) as? Windless else {
-            let windless = Windless(contentsView: self)
-            layer.setValue(windless, forKey: WindlessKey)
-            return windless
-        }
-        return windless
-    }
-}
