@@ -27,7 +27,12 @@ class TableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Table"
-        tableView.windless.start()
+        tableView.windless
+//            .apply {
+//                $0?.animationLayerColor = .red
+//                $0?.animationBackgroundColor = .blue
+//            }
+            .start()
     }
     
     @IBAction func tapped(_ sender: Any) {

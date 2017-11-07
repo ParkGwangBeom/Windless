@@ -15,11 +15,8 @@ public class WindlessConfiguration: WindlessType {
     public var duration: CFTimeInterval = 4
     public var pauseDuration: CFTimeInterval = 2
     public var timingFuction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-    
     public var animationLayerColor: UIColor = .lightGray
     public var animationBackgroundColor: UIColor = .groupTableViewBackground
     public var animationLayerOpacity: CGFloat = 0.8
     public var cornerRadius: CGFloat = 4
-    
-    var coverLayerColor: UIColor = .white
 }

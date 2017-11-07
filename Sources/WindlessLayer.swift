@@ -26,7 +26,6 @@ class WindlessLayer: CALayer {
     
     override init() {
         super.init()
-        coverLayer.backgroundColor = configuration.coverLayerColor.cgColor
         addSublayer(gradientLayer)
         addSublayer(coverLayer)
     }
@@ -48,6 +47,10 @@ extension WindlessLayer {
     
     func update() {
         gradientLayer.update()
+    }
+    
+    func updateCoverLayerColor(_ color: UIColor) {
+        coverLayer.backgroundColor = color.cgColor
     }
     
     func animate(_ flag: Bool) {

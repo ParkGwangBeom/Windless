@@ -38,6 +38,7 @@ private extension Windless {
     
     func updateLayer() {
         windlessLayer?.update()
+        windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
         windlessLayer?.windlessableLayers = windlessableSubviews(of: contentsView).flatMap{ $0.layer }
     }
     
