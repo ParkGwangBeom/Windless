@@ -28,4 +28,8 @@ public extension UIView {
         }
         return windless
     }
+    
+    internal var flattenedViewHierarchy: [UIView] {
+        return [self] + subviews.flatMap { $0.flattenedViewHierarchy }
+    }
 }

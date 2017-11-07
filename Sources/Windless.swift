@@ -23,21 +23,10 @@ public class Windless {
 
 private extension Windless {
     
-    func windlessableSubviews(of view: UIView) -> [UIView] {
-        var subviews = [UIView]()
-        view.subviews.forEach {
-            subviews += windlessableSubviews(of: $0)
-            if $0.isWindlessable {
-                subviews.append($0)
-            }
-        }
-        return subviews
-    }
-    
     func updateLayer() {
         windlessLayer?.updateGradientLayer()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
-        windlessLayer?.updateWindlessableLayers(windlessableSubviews(of: contentsView).flatMap{ $0.layer })
+        windlessLayer?.updateWindlessableLayers(contentsView.flattenedViewHierarchy.filter{ $0.isWindlessable }.flatMap{ $0.layer })
     }
     
     func setupWindlessLayer() {
