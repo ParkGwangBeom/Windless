@@ -1,4 +1,4 @@
-# Windless
+- Windless 이미지
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/Hero.svg?style=flat)](http://cocoapods.org/pods/Hero)
@@ -10,12 +10,102 @@
 - 소개
 - gif이미지
 
-- Requirements 요구사항
+## Contents
 
-- cocoapod
-- carthage
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
-- 사용법
+## Requirements
 
-- faq
-- 라이센스
+- iOS 8.0+
+- Xcode 9.0+
+- Swift 4.0+
+
+## Installation
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 1.1+ is required to build Windless 4.0+.
+
+To integrate Windless into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'Windless', '~> 1.0'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "Interactive-Studio/Windless" ~> 1.0
+```
+
+Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
+
+### Manually
+
+If you prefer not to use either of the aforementioned dependency managers, you can integrate SnapKit into your project manually.
+
+---
+
+## Usage
+
+### Quick Start
+
+```swift
+import Windless
+
+class ViewController: UIViewController {
+
+    lazy var contentsView = UIView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.addSubview(contentsView)
+        contentsView.windless.setConfig {
+        }
+    }
+
+}
+```
+
+## Credits
+
+- GwangBeom Park ([@gwangbeom](https://github.com/ParkGwangBeom))
+
+## License
+
+Windless is released under the MIT license. See LICENSE for details.
+
