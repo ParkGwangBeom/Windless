@@ -28,7 +28,7 @@ class BasicViewController: UIViewController {
             .apply {
                 $0?.beginTime = 1
                 $0?.duration = 3
-                $0?.animationLayerColor = .red
+                $0?.animationLayerOpacity = 0.5
             }
             .start()
         
