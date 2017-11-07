@@ -11,19 +11,19 @@ import UIKit
 public extension UIView {
     
     private struct AssociatedKeys {
-        static var isWindlessableKey = "isWindlessableKey"
-        static var windlessKey = "windlessKey"
+        static var isWindlessable = "isWindlessableKey"
+        static var windless = "windlessKey"
     }
     
     @IBInspectable var isWindlessable: Bool {
-        get { return objc_getAssociatedObject(self, &AssociatedKeys.isWindlessableKey) as? Bool ?? false }
-        set { objc_setAssociatedObject(self, &AssociatedKeys.isWindlessableKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.isWindlessable) as? Bool ?? false }
+        set { objc_setAssociatedObject(self, &AssociatedKeys.isWindlessable, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
     var windless: Windless {
-        guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windlessKey) as? Windless else {
+        guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windless) as? Windless else {
             let windless = Windless(contentsView: self)
-            objc_setAssociatedObject(self, &AssociatedKeys.windlessKey, windless, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.windless, windless, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return windless
         }
         return windless
