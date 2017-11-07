@@ -74,7 +74,6 @@ private extension WindlessGradientLayer {
         
         // TODO: 이부분은 수정좀 해줘야할듯...
         // 이부분에 따라서 효과가 완전히 다름
-//        gradientAnimation.toValue = [1.0, 1.8, 2]
         gradientAnimation.toValue = [1.0, 2.5, 3]
         gradientAnimation.duration = configuration.duration
 

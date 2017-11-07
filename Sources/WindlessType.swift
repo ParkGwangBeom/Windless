@@ -49,17 +49,14 @@ public enum WindlessDirection: Int {
 
 protocol WindlessType {
     
-    // gradient가 표현되는 부분 default .right
     var direction: WindlessDirection { get set }
 
-    // gradient 속도
     var speed: Float { get set }
     
     var beginTime: CFTimeInterval { get set }
     
     var duration: CFTimeInterval { get set }
     
-    // 그라디언트 애니메이션이 지나가고 중간에 쉬는 시간
     var pauseDuration: CFTimeInterval { get set }
     
     var timingFuction: CAMediaTimingFunction { get set }
