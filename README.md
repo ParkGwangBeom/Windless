@@ -81,7 +81,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
-### Quick Start
+### Usage Example 1
 
 ```swift
 import Windless
@@ -89,13 +89,65 @@ import Windless
 class ViewController: UIViewController {
 
     lazy var contentsView = UIView()
+    
+    var view1 = UIView()
+    var view2 = UIView()
+    var view3 = UIView()
+    var view4 = UIView()
+    var view5 = UIView()
+    var view6 = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.addSubview(contentsView)
-        contentsView.windless.setConfig {
-        }
+        
+        // start
+        contentsView.windless
+               .setupContainer([view1, view2, view3, view4, view5, view6])
+               .apply {
+                    $0?.beginTime = 1
+                    $0?.duration = 3
+                    $0?.animationLayerColor = .red
+                }
+                .start()
+                
+        // stop
+        contentsView.windless.end()
+    }
+
+}
+```
+
+### Usage Example 2
+
+```swift
+import Windless
+
+class ViewController: UIViewController {
+
+    lazy var contentsView = UIView()
+    
+    var view1 = UIView()
+    var view2 = UIView()
+    var view3 = UIView()
+    var view4 = UIView()
+    var view5 = UIView()
+    var view6 = UIView()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.addSubview(contentsView)
+        
+        contentsView.windless
+               .setupContainer([view1, view2, view3, view4, view5, view6])
+               .apply {
+                    $0?.beginTime = 1
+                    $0?.duration = 3
+                    $0?.animationLayerColor = .red
+                }
+                .start()
     }
 
 }
