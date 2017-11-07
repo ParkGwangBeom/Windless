@@ -10,11 +10,10 @@ import UIKit
 
 class WindlessLayer: CALayer {
 
-    fileprivate lazy var gradientLayer = WindlessGradientLayer(frame: bounds, configuration: configuration)
-    fileprivate lazy var coverLayer = CAShapeLayer()
-    
-    var windlessableLayers: [CALayer] = []
-    var configuration = WindlessConfiguration()
+    fileprivate var gradientLayer: WindlessGradientLayer?
+    fileprivate var coverLayer:  CAShapeLayer?
+    fileprivate var windlessableLayers: [CALayer] = []
+    fileprivate var configuration = WindlessConfiguration()
     var windless: Bool = false {
         didSet {
             guard oldValue != windless else {
@@ -24,20 +23,17 @@ class WindlessLayer: CALayer {
         }
     }
     
-    override init() {
-        super.init()
-        addSublayer(gradientLayer)
-        addSublayer(coverLayer)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    convenience required init(frame: CGRect, configuration: WindlessConfiguration) {
+        self.init()
+        self.frame = frame
+        self.configuration = configuration
+        setupSublayers()
     }
     
     override func layoutSublayers() {
         super.layoutSublayers()
-        layoutIfNeeded()    // 이부분은 수정좀 해야될거 같은데...
-        setupPosition()
+        layoutIfNeeded()
+        setupSublayersPosition()
         setupMaskLayer()
     }
 }
@@ -45,23 +41,27 @@ class WindlessLayer: CALayer {
 // MARK: internal
 extension WindlessLayer {
     
-    func update() {
-        gradientLayer.update()
+    func updateGradient() {
+        gradientLayer?.update()
     }
     
     func updateCoverLayerColor(_ color: UIColor) {
-        coverLayer.backgroundColor = color.cgColor
+        coverLayer?.backgroundColor = color.cgColor
+    }
+    
+    func updateWindlessableLayers(_ layers: [CALayer]) {
+        windlessableLayers = layers
     }
     
     func animate(_ flag: Bool) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.4)
         CATransaction.setCompletionBlock {
-            flag ? self.gradientLayer.show() : self.gradientLayer.hide()
+            flag ? self.gradientLayer?.show() : self.gradientLayer?.hide()
         }
         let alpha: Float = flag ? 1 : 0
-        gradientLayer.opacity = alpha
-        coverLayer.opacity = alpha
+        gradientLayer?.opacity = alpha
+        coverLayer?.opacity = alpha
         CATransaction.commit()
     }
 }
@@ -84,11 +84,20 @@ private extension WindlessLayer {
         let maskLayer = CAShapeLayer()
         maskLayer.path = subLayersPath.cgPath
         maskLayer.fillRule = kCAFillRuleEvenOdd
-        coverLayer.mask = maskLayer
+        coverLayer?.mask = maskLayer
+    }
+    
+    func setupSublayers() {
+        let gradientLayer = WindlessGradientLayer(frame: frame, configuration: configuration)
+        let coverLayer = CAShapeLayer()
+        addSublayer(gradientLayer)
+        addSublayer(coverLayer)
+        self.gradientLayer = gradientLayer
+        self.coverLayer = coverLayer
     }
 
-    func setupPosition() {
-        coverLayer.frame = bounds
-        gradientLayer.frame = bounds
+    func setupSublayersPosition() {
+        coverLayer?.frame = bounds
+        gradientLayer?.frame = bounds
     }
 }

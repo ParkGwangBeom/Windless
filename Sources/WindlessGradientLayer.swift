@@ -10,10 +10,6 @@ import UIKit
 
 class WindlessGradientLayer: CAGradientLayer {
 
-    fileprivate struct AnimationKey {
-        static let location = "location_key"
-    }
-    
     fileprivate var configuration: WindlessConfiguration
     
     required init?(coder aDecoder: NSCoder) {
@@ -40,14 +36,15 @@ class WindlessGradientLayer: CAGradientLayer {
 }
 
 // MARK: internal
+private let GradientAnimationKey = "GradientAnimationKey"
 extension WindlessGradientLayer {
     
     func show() {
-        add(gradientAnimation(), forKey: AnimationKey.location)
+        add(gradientAnimation(), forKey: GradientAnimationKey)
     }
     
     func hide() {
-        removeAnimation(forKey: AnimationKey.location)
+        removeAnimation(forKey: GradientAnimationKey)
     }
 }
 

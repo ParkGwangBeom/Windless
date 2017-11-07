@@ -12,10 +12,8 @@ public class Windless {
     
     fileprivate weak var contentsView: UIView!
     fileprivate var windlessLayer: WindlessLayer?
-    fileprivate var configuration: WindlessConfiguration? {
-        return windlessLayer?.configuration
-    }
-    
+    fileprivate var configuration = WindlessConfiguration()
+
     init(contentsView: UIView) {
         contentsView.layoutIfNeeded()
         self.contentsView = contentsView
@@ -37,14 +35,13 @@ private extension Windless {
     }
     
     func updateLayer() {
-        windlessLayer?.update()
+        windlessLayer?.updateGradient()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
-        windlessLayer?.windlessableLayers = windlessableSubviews(of: contentsView).flatMap{ $0.layer }
+        windlessLayer?.updateWindlessableLayers(windlessableSubviews(of: contentsView).flatMap{ $0.layer })
     }
     
     func setupWindlessLayer() {
-        let layer = WindlessLayer()
-        layer.frame = contentsView.bounds
+        let layer = WindlessLayer(frame: contentsView.bounds, configuration: configuration)
         contentsView.layer.addSublayer(layer)
         windlessLayer = layer
     }

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 /*
  TODO
  - 기울기 적용하기
@@ -48,19 +47,11 @@ public enum WindlessDirection: Int {
     }
 }
 
-//public enum WindlessShape: Int {
-//    case diagonal
-//    case straight
-//}
-
 protocol WindlessType {
     
     // gradient가 표현되는 부분 default .right
     var direction: WindlessDirection { get set }
-    
-    // gradient로 보여지는 부분의 모양 (대각선, 직선) default .diagonal
-    //    var shape: WindlessShape { get set }
-    
+
     // gradient 속도
     var speed: Float { get set }
     
