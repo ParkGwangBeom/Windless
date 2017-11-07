@@ -7,7 +7,7 @@
 ![Swift 4.0+](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
 [![License](https://img.shields.io/cocoapods/l/Hero.svg?style=flat)](https://github.com/lkzhao/Hero/blob/master/LICENSE?raw=true)
 
-Windless makes it easy to implement invisible layout indicators.
+**Windless** makes it easy to implement invisible layout loading indicators.
 
 ![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/sample.gif)
 
@@ -46,7 +46,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Windless', '~> 1.0'
+    pod 'Windless', '~> 0.1'
 end
 ```
 
@@ -70,14 +70,14 @@ $ brew install carthage
 To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Interactive-Studio/Windless" ~> 1.0
+github "Interactive-Studio/Windless" ~> 0.1
 ```
 
 Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
 
 ### Manually
 
-If you prefer not to use either of the aforementioned dependency managers, you can integrate SnapKit into your project manually.
+If you prefer not to use either of the aforementioned dependency managers, you can integrate Windless into your project manually.
 
 ---
 
