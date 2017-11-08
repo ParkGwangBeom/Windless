@@ -83,7 +83,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
-### Use Code
+### Code
 
 ```swift
 import Windless
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### Use Storyboard, Xib
+### Storyboard, Xib
 
 If you use **Storyboard** or **xib**, you only need to set the `isWindlessable` flag to true for the views you want to show as fake in the view inspector of the view, and you do not have to pass the view through the `setupWindlessableViews` method.
 
@@ -135,7 +135,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### Custom
+### Custom Options
 
 There are several customizable options in **Windless**.
 
