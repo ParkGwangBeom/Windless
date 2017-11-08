@@ -83,7 +83,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
-### Usage Example 1
+### Use Code
 
 ```swift
 import Windless
@@ -92,26 +92,19 @@ class ViewController: UIViewController {
 
     lazy var contentsView = UIView()
     
-    var view1 = UIView()
-    var view2 = UIView()
-    var view3 = UIView()
-    var view4 = UIView()
-    var view5 = UIView()
-    var view6 = UIView()
+    var subView1 = UIView()
+    var subView2 = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.addSubview(contentsView)
+        contentsView.addSubview(subView1)
+        contentsView.addSubview(subView2)
         
         // start
         contentsView.windless
-               .setupContainer([view1, view2, view3, view4, view5, view6])
-               .apply {
-                    $0?.beginTime = 1
-                    $0?.duration = 3
-                    $0?.animationLayerColor = .red
-                }
+                .setupContainer([subView1, subView2])
                 .start()
                 
         // stop
@@ -121,37 +114,72 @@ class ViewController: UIViewController {
 }
 ```
 
-### Usage Example 2
+### Use Storyboard, Xib
+
+
+
+![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example1.png)
 
 ```swift
 import Windless
 
 class ViewController: UIViewController {
 
-    lazy var contentsView = UIView()
-    
-    var view1 = UIView()
-    var view2 = UIView()
-    var view3 = UIView()
-    var view4 = UIView()
-    var view5 = UIView()
-    var view6 = UIView()
+    @IBOutlet weak var contentsView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.addSubview(contentsView)
-        
-        contentsView.windless
-               .setupContainer([view1, view2, view3, view4, view5, view6])
-               .apply {
-                    $0?.beginTime = 1
-                    $0?.duration = 3
-                    $0?.animationLayerColor = .red
-                }
-                .start()
+        contentsView.windless.start()
     }
+}
+```
 
+### Custom
+```swift
+protocol WindlessType {
+
+    var direction: WindlessDirection { get set }
+
+    var speed: Float { get set }
+    
+    var beginTime: CFTimeInterval { get set }
+    
+    var duration: CFTimeInterval { get set }
+    
+    var pauseDuration: CFTimeInterval { get set }
+    
+    var timingFuction: CAMediaTimingFunction { get set }
+    
+    var animationLayerColor: UIColor { get set }
+    
+    var animationBackgroundColor: UIColor { get set }
+    
+    var animationLayerOpacity: CGFloat { get set}
+    
+    var cornerRadius: CGFloat { get set }
+}
+```
+
+```swift
+import Windless
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var contentsView: UIView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        contentsView.windless
+            .apply {
+                $0.beginTime = 1
+                $0.pauseDuration = 2
+                $0.duration = 3
+                $0.animationLayerOpacity = 0.5
+            }
+            .start()
+    }
 }
 ```
 
