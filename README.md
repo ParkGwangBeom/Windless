@@ -7,7 +7,7 @@
 ![Swift 4.0+](https://img.shields.io/badge/Swift-4.0%2B-orange.svg)
 [![License](https://img.shields.io/cocoapods/l/Hero.svg?style=flat)](https://github.com/lkzhao/Hero/blob/master/LICENSE?raw=true)
 
-**Windless** makes it easy to implement invisible layout loading indicators.
+**Windless** makes it easy to implement invisible layout loading view.
 
 ![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/sample.gif)
 
