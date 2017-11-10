@@ -135,6 +135,14 @@ class ViewController: UIViewController {
 }
 ```
 
+### Showing
+
+When using **Storyboard** or **Xib**, if you want to make certain views not visible in the view you are loading, set the `isShow` flag to false. This is true by default.
+
+If you have **code**, put in views that will not be visible in `setupNotShowingViews`.
+
+![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example2.png)
+
 ### Custom Options
 
 There are several customizable options in **Windless**.
