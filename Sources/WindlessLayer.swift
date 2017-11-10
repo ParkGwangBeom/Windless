@@ -13,6 +13,7 @@ class WindlessLayer: CALayer {
     fileprivate var gradientLayer: WindlessGradientLayer?
     fileprivate var coverLayer:  CAShapeLayer?
     fileprivate var windlessableLayers: [CALayer] = []
+    fileprivate var notWindlessableLayers: [CALayer] = []
     fileprivate var configuration = WindlessConfiguration()
     var windless: Bool = false {
         didSet {
@@ -35,6 +36,7 @@ class WindlessLayer: CALayer {
         layoutIfNeeded()
         setupSublayersPosition()
         setupMaskLayer()
+        setupShowingLayer()
     }
 }
 
@@ -51,6 +53,10 @@ extension WindlessLayer {
     
     func updateWindlessableLayers(_ layers: [CALayer]) {
         windlessableLayers = layers
+    }
+    
+    func updateNotWindlessableLayers(_ layers: [CALayer]) {
+        self.notWindlessableLayers = layers
     }
 }
 
@@ -73,6 +79,16 @@ private extension WindlessLayer {
         maskLayer.path = subLayersPath.cgPath
         maskLayer.fillRule = kCAFillRuleEvenOdd
         coverLayer?.mask = maskLayer
+    }
+    
+    func setupShowingLayer() {
+        notWindlessableLayers.forEach {
+            let copy = CALayer(layer: $0)
+            copy.backgroundColor = $0.backgroundColor
+            copy.cornerRadius = $0.cornerRadius
+            copy.frame = $0.convert($0.bounds, to: self)
+            coverLayer?.addSublayer(copy)
+        }
     }
     
     func setupSublayers() {

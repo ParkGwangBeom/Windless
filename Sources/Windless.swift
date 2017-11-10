@@ -26,7 +26,13 @@ private extension Windless {
     func updateLayer() {
         windlessLayer?.updateGradientLayer()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
-        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable }.flatMap{ $0.layer })
+        // TODO: Refactoring
+        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable && $0.isShow }.flatMap{ $0.layer })
+        windlessLayer?.updateNotWindlessableLayers(contentsView.allSubviews.filter{ !$0.isWindlessable && $0.isShow }.flatMap{
+            let layer = $0.layer
+            layer.backgroundColor = $0.backgroundColor?.cgColor
+            return layer
+        })
     }
     
     func setupWindlessLayer() {
@@ -67,6 +73,18 @@ public extension Windless {
     @discardableResult
     func setupWindlessableViews(_ views: [UIView]) -> Self {
         views.forEach { $0.isWindlessable = true }
+        return self
+    }
+    
+    /**
+     Set up views that will not be visible in the loading view
+     
+     - Parameters:
+     - views: Invisible Views
+     */
+    @discardableResult
+    func setupNotShowingViews(_ views: [UIView]) -> Self {
+        views.forEach{ $0.isShow = false }
         return self
     }
 }
