@@ -46,7 +46,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Windless', '~> 0.1'
+    pod 'Windless', '~> 0.1.0'
 end
 ```
 
@@ -70,7 +70,7 @@ $ brew install carthage
 To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Interactive-Studio/Windless" ~> 0.1
+github "Interactive-Studio/Windless" ~> 0.1.0
 ```
 
 Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
