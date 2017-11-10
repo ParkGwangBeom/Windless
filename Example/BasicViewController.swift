@@ -24,7 +24,7 @@ class BasicViewController: UIViewController {
         self.title = "Basic"
         
         view.windless
-            .setupWindlessableViews([view1, view2, view3, view4, view5, view6])
+            .setupWindlessableViews([view2, view3, view5, view6])
             .apply {
                 $0.direction = .right
                 $0.beginTime = 1
