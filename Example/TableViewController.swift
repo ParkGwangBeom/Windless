@@ -28,10 +28,6 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Table"
         tableView.windless
-//            .apply {
-//                $0?.animationLayerColor = .red
-//                $0?.animationBackgroundColor = .blue
-//            }
             .start()
     }
     

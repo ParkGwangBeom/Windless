@@ -15,11 +15,18 @@ public extension UIView {
         static var windless = "windlessKey"
     }
     
+    /**
+     **isWindlessable** allows the view to be composed of skeletons.
+     If true, the view becomes the skeleton of the loading view and is exposed to the animation. Default false
+     */
     @IBInspectable var isWindlessable: Bool {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.isWindlessable) as? Bool ?? false }
         set { objc_setAssociatedObject(self, &AssociatedKeys.isWindlessable, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
     }
     
+    /**
+     **windless** makes subviews with a true isWindlessable value of true as a loading view with a skeleton and helps control the animation.
+     */
     var windless: Windless {
         guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windless) as? Windless else {
             let windless = Windless(contentsView: self)
@@ -29,7 +36,7 @@ public extension UIView {
         return windless
     }
     
-    internal var flattenedViewHierarchy: [UIView] {
-        return [self] + subviews.flatMap { $0.flattenedViewHierarchy }
+    internal var allSubviews: [UIView] {
+        return [self] + subviews.flatMap { $0.allSubviews }
     }
 }

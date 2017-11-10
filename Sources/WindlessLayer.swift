@@ -52,18 +52,6 @@ extension WindlessLayer {
     func updateWindlessableLayers(_ layers: [CALayer]) {
         windlessableLayers = layers
     }
-    
-    func animate(_ flag: Bool) {
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(0.4)
-        CATransaction.setCompletionBlock {
-            flag ? self.gradientLayer?.show() : self.gradientLayer?.hide()
-        }
-        let alpha: Float = flag ? 1 : 0
-        gradientLayer?.opacity = alpha
-        coverLayer?.opacity = alpha
-        CATransaction.commit()
-    }
 }
 
 // MARK: private
@@ -99,5 +87,17 @@ private extension WindlessLayer {
     func setupSublayersPosition() {
         gradientLayer?.frame = bounds
         coverLayer?.frame = bounds
+    }
+    
+    func animate(_ flag: Bool) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(0.4)
+        CATransaction.setCompletionBlock {
+            flag ? self.gradientLayer?.show() : self.gradientLayer?.hide()
+        }
+        let alpha: Float = flag ? 1 : 0
+        gradientLayer?.opacity = alpha
+        coverLayer?.opacity = alpha
+        CATransaction.commit()
     }
 }

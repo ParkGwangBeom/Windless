@@ -8,67 +8,35 @@
 
 import UIKit
 
-/*
- TODO
- - 기울기 적용하기
- - 넓이 계산하기
- - 색을 좀 더 커스텀 가능하도록 하기
- - 라벨의 경우 한줄일 때 높이와 줄 수를 지정할 수 있게 하기
- */
-
-struct Location {
-    var start: CGPoint
-    var end: CGPoint
-}
-
-public enum WindlessDirection: Int {
-    case right
-    case rightDiagonal
-    case left
-    case leftDiagonal
-    case up
-    case down
-    
-    var location: Location {
-        switch self {
-        case .right:
-            return Location(start: CGPoint(x: 0, y: 0.5), end: CGPoint(x: 1, y: 0.5))
-        case .rightDiagonal:
-            return Location(start: CGPoint(x: 0, y: 0.0), end: CGPoint(x: 1, y: 1))
-        case .left:
-            return Location(start: CGPoint(x: 1, y: 0.5), end: CGPoint(x: 0, y: 0.5))
-        case .leftDiagonal:
-            return Location(start: CGPoint(x: 1, y: 1), end: CGPoint(x: 0, y: 0))
-        case .up:
-            return Location(start: CGPoint(x: 0.5, y: 1), end: CGPoint(x: 0.5, y: 0))
-        case .down:
-            return Location(start: CGPoint(x: 0.5, y: 0), end: CGPoint(x: 0.5, y: 1))
-        }
-    }
-}
-
 protocol WindlessType {
     
+    //! @abstract The direction of windless animation. Defaults to rightDiagonal.
     var direction: WindlessDirection { get set }
 
+    //! @abstract The speed of windless animation. Defaults to 1.
     var speed: Float { get set }
     
+    //! @abstract The duration of the fade used when windless begins. Defaults to 0.
     var beginTime: CFTimeInterval { get set }
     
+    //! @abstract The time interval windless in seconds. Defaults to 4.
     var duration: CFTimeInterval { get set }
     
+    //! @abstract The time interval between windless in seconds. Defaults to 2.
     var pauseDuration: CFTimeInterval { get set }
     
+    //! @abstract gradient animation timingFunction default easeOut
     var timingFuction: CAMediaTimingFunction { get set }
     
-    // TODO 추후에
-    //    var animationColors: [UIColor] { get set }
-    
+    //! @abstract gradient layer center color default .lightGray
     var animationLayerColor: UIColor { get set }
     
+    //! @abstract mask layer background color default .groupTableViewBackground
     var animationBackgroundColor: UIColor { get set }
     
+    //! @abstract The opacity of the content while it is windless. Defaults to 0.8.
     var animationLayerOpacity: CGFloat { get set}
     
+    //! @abstract mask layer cornerRadius default 4
     var cornerRadius: CGFloat { get set }
 }

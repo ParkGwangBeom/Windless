@@ -26,6 +26,7 @@ class BasicViewController: UIViewController {
         view.windless
             .setupWindlessableViews([view1, view2, view3, view4, view5, view6])
             .apply {
+                $0.direction = .right
                 $0.beginTime = 1
                 $0.duration = 3
                 $0.animationLayerOpacity = 0.5

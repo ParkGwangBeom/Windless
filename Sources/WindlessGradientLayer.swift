@@ -57,8 +57,6 @@ extension WindlessGradientLayer {
                   configuration.animationLayerColor.withAlphaComponent(configuration.animationLayerOpacity),
                   configuration.animationBackgroundColor].flatMap{ $0.cgColor }
         locations = [-0.4, -0.2, 0.0]
-        
-        // TODO: background color색에 따라서 뒤에보이게끔도 가능할듯
         backgroundColor = configuration.animationBackgroundColor.cgColor
     }
 }
@@ -69,11 +67,10 @@ private extension WindlessGradientLayer {
     func gradientAnimation() -> CAAnimation {
         let gradientAnimation = CABasicAnimation(keyPath: "locations")
         
-        // TODO: width 값 설정
+        // TODO: calculator width
         gradientAnimation.fromValue = [-0.4, -0.2, 0.0]
         
-        // TODO: 이부분은 수정좀 해줘야할듯...
-        // 이부분에 따라서 효과가 완전히 다름
+        // TODO: custom location
         gradientAnimation.toValue = [1.0, 2.5, 3]
         gradientAnimation.duration = configuration.duration
 

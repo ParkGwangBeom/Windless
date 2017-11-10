@@ -26,7 +26,7 @@ private extension Windless {
     func updateLayer() {
         windlessLayer?.updateGradientLayer()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
-        windlessLayer?.updateWindlessableLayers(contentsView.flattenedViewHierarchy.filter{ $0.isWindlessable }.flatMap{ $0.layer })
+        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable }.flatMap{ $0.layer })
     }
     
     func setupWindlessLayer() {
@@ -46,12 +46,24 @@ private extension Windless {
 // MARK: setup
 public extension Windless {
     
+    /**
+     **apply** helps you define the information you need for windless.
+     
+     - Parameters:
+         - config: WindlessConfiguration
+     */
     @discardableResult
     func apply(_ config: (WindlessConfiguration) -> Void) -> Self {
         config(configuration)
         return self
     }
     
+    /**
+     Set the isWindlessable value of views to true
+     
+     - Parameters:
+         - views: Views that will be the skeleton of the loading view
+     */
     @discardableResult
     func setupWindlessableViews(_ views: [UIView]) -> Self {
         views.forEach { $0.isWindlessable = true }
@@ -62,6 +74,7 @@ public extension Windless {
 // MARK: animation
 public extension Windless {
     
+    /// Start windless animation
     func start() {
         setupScrollEnabled(false)
         updateLayer()
@@ -72,6 +85,7 @@ public extension Windless {
         }
     }
     
+    /// End windless animation
     func end() {
         UIView.transition(with: contentsView, duration: 0.4, options: [], animations: {
             self.windlessLayer?.isHidden = true
