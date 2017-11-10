@@ -28,6 +28,9 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Table"
         tableView.windless
+            .apply {
+                $0.cornerRadius = 3
+            }
             .start()
     }
     

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +32,7 @@
                                             <constraint firstAttribute="height" constant="180" id="mZo-zr-BnO"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-UO-ya8">
@@ -98,6 +97,7 @@
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isShow" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXK-SM-zVY">
@@ -214,7 +214,7 @@
                                                                 <constraint firstAttribute="height" constant="40" id="upy-lK-2Yg"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPn-NA-tQn">
@@ -307,7 +307,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="iif-4I-8j9"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NST-cU-b5V">

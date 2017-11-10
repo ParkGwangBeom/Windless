@@ -40,7 +40,7 @@ public class WindlessConfiguration: WindlessType {
     /// The opacity of the content while it is windless. Defaults to 0.8.
     public var animationLayerOpacity: CGFloat = 0.8
     
-    /// Mask layer cornerRadius default 4
-    public var cornerRadius: CGFloat = 4
+    /// Mask layer cornerRadius default 0
+    public var cornerRadius: CGFloat = 0
 }
 

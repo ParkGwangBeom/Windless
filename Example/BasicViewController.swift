@@ -30,6 +30,7 @@ class BasicViewController: UIViewController {
                 $0.beginTime = 1
                 $0.duration = 3
                 $0.animationLayerOpacity = 0.5
+                $0.cornerRadius = 3
             }
             .start()
         
