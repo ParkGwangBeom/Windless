@@ -83,7 +83,7 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
-### Use Code
+### Code
 
 ```swift
 import Windless
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
         
         // start
         contentsView.windless
-                .setupContainer([subView1, subView2])
+                .setupWindlessableViews([subView1, subView2])
                 .start()
                 
         // stop
@@ -114,9 +114,9 @@ class ViewController: UIViewController {
 }
 ```
 
-### Use Storyboard, Xib
+### Storyboard, Xib
 
-
+If you use **Storyboard** or **xib**, you only need to set the `isWindlessable` flag to true for the views you want to show as fake in the view inspector of the view, and you do not have to pass the view through the `setupWindlessableViews` method.
 
 ![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example1.png)
 
@@ -135,7 +135,10 @@ class ViewController: UIViewController {
 }
 ```
 
-### Custom
+### Custom Options
+
+There are several customizable options in **Windless**.
+
 ```swift
 protocol WindlessType {
 
@@ -161,6 +164,8 @@ protocol WindlessType {
 }
 ```
 
+To set the options, use the apply method as shown below.
+
 ```swift
 import Windless
 
@@ -182,6 +187,8 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+If you want to know more detailed usage, please refer to Example.
 
 ## Credits
 
