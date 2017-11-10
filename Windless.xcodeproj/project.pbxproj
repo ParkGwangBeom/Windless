@@ -18,6 +18,7 @@
 		4A1C00C31FA102E5006DEA4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C00C11FA102E5006DEA4C /* LaunchScreen.storyboard */; };
 		4A1C00C91FA104D2006DEA4C /* Windless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Windless.framework */; };
 		4A1C00CD1FA1AB80006DEA4C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C00CC1FA1AB80006DEA4C /* TableViewController.swift */; };
+		4A68FF851FB6193000F637B0 /* UIView+Windless.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4AE437C11FB219FF00E22C5A /* UIView+Windless.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		4AA57E0C1FA1DE1300B903EA /* WindlessGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA57E0B1FA1DE1300B903EA /* WindlessGradientLayer.swift */; };
 		4AA57E101FA21BB200B903EA /* Windless.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Windless.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4AAE06DE1FB1729200506778 /* WindlessType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAE06DC1FB1727A00506778 /* WindlessType.swift */; };
@@ -214,6 +215,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A68FF851FB6193000F637B0 /* UIView+Windless.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
