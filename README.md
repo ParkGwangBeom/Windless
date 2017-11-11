@@ -9,10 +9,6 @@
 
 **Windless** makes it easy to implement invisible layout loading view.
 
-![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/sample.gif)
-
-## Preview
-
 <table>
 <tr>
 <td width="25%">
