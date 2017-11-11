@@ -12,17 +12,6 @@
 <table>
 <tr>
 <td width="25%">
-<center>Basic</center>
-</td>
-<td width="25%">
-<center>Table</center>
-</td>
-<td width="25%">
-<center>Collection</center>
-</td>
-</tr>
-<tr>
-<td width="25%">
 <img src="Resource/basic.gif"></img>
 </td>
 <td width="25%">
