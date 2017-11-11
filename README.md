@@ -11,6 +11,32 @@
 
 ![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/sample.gif)
 
+## Preview
+
+<table>
+<tr>
+<td width="25%">
+<center>Basic</center>
+</td>
+<td width="25%">
+<center>Table</center>
+</td>
+<td width="25%">
+<center>Collection</center>
+</td>
+</tr>
+<tr>
+<td width="25%">
+<img src="Resource/basic.gif"></img>
+</td>
+<td width="25%">
+<img src="Resource/table.gif"></img>
+</td>
+<td width="25%">
+<img src="Resource/collection.gif"></img>
+</td>
+</tr>
+</table>
 
 ## Contents
 
