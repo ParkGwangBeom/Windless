@@ -8,17 +8,29 @@
 
 import UIKit
 
+enum LayerType {
+    case animation
+    case cover
+}
+
 class WindlessContext {
     
     weak var container: UIView!
-    var animationLayer: CAGradientLayer = CAGradientLayer()
-    var coverLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var animationLayer: CAGradientLayer = CAGradientLayer()
+    fileprivate var coverLayer: CAShapeLayer = CAShapeLayer()
     
     init(container: UIView) {
         self.container = container
         animationLayer.frame = container.bounds
         coverLayer.frame = container.bounds
         coverLayer.backgroundColor = container.backgroundColor?.cgColor
+    }
+    
+    func layer(for type: LayerType) -> CALayer {
+        switch type {
+        case .animation: return animationLayer
+        case .cover: return coverLayer
+        }
     }
 }
 

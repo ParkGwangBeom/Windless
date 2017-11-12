@@ -15,10 +15,10 @@ class WindlessLayer: CALayer {
         self.context = context
         super.init()
         self.frame = frame
-        addSublayer(context.animationLayer)
-        addSublayer(context.coverLayer)
+        addSublayer(context.layer(for: .animation))
+        addSublayer(context.layer(for: .cover))
         Maker.makeNotWindlessableLayers(in: context.container).forEach {
-            context.coverLayer.addSublayer($0)
+            context.layer(for: .cover).addSublayer($0)
         }
     }
     
