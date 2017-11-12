@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Windless"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "loading view"
   s.description  = "Windless makes it easy to implement invisible layout loading view."
   s.homepage     = "https://github.com/Interactive-Studio/Windless"
