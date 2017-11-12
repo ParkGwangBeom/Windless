@@ -57,7 +57,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Windless', '~> 0.1.1'
+    pod 'Windless', '~> 0.1.2'
 end
 ```
 
@@ -81,7 +81,7 @@ $ brew install carthage
 To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Interactive-Studio/Windless" ~> 0.1.1
+github "Interactive-Studio/Windless" ~> 0.1.2
 ```
 
 Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
@@ -145,14 +145,6 @@ class ViewController: UIViewController {
     }
 }
 ```
-
-### Showing
-
-When using **Storyboard** or **Xib**, if you want to make certain views not visible in the view you are loading, set the `isShow` flag to false. This is true by default.
-
-If you have **code**, put in views that will not be visible in `setupNotShowingViews`.
-
-![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example2.png)
 
 ### Custom Options
 
