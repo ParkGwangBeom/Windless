@@ -56,7 +56,7 @@ extension WindlessLayer {
     }
     
     func updateNotWindlessableLayers(_ layers: [CALayer]) {
-        self.notWindlessableLayers = layers
+        notWindlessableLayers = layers
     }
 }
 
@@ -84,8 +84,11 @@ private extension WindlessLayer {
     func setupShowingLayer() {
         notWindlessableLayers.forEach {
             let copy = CALayer(layer: $0)
+            copy.contents = $0.contents
+            copy.contentsGravity = $0.contentsGravity
             copy.backgroundColor = $0.backgroundColor
             copy.cornerRadius = $0.cornerRadius
+            copy.contentsScale = $0.contentsScale
             copy.frame = $0.convert($0.bounds, to: self)
             coverLayer?.addSublayer(copy)
         }

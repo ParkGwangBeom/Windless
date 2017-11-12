@@ -27,8 +27,8 @@ private extension Windless {
         windlessLayer?.updateGradientLayer()
         windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
         // TODO: Refactoring
-        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable && $0.isShow }.flatMap{ $0.layer })
-        windlessLayer?.updateNotWindlessableLayers(contentsView.allSubviews.filter{ !$0.isWindlessable && $0.isShow }.flatMap{
+        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable }.flatMap{ $0.layer })
+        windlessLayer?.updateNotWindlessableLayers(contentsView.allSubviews.filter{ !$0.isWindlessable }.flatMap{
             let layer = $0.layer
             layer.backgroundColor = $0.backgroundColor?.cgColor
             return layer
@@ -76,17 +76,17 @@ public extension Windless {
         return self
     }
     
-    /**
-     Set up views that will not be visible in the loading view
-     
-     - Parameters:
-     - views: Invisible Views
-     */
-    @discardableResult
-    func setupNotShowingViews(_ views: [UIView]) -> Self {
-        views.forEach{ $0.isShow = false }
-        return self
-    }
+//    /**
+//     Set up views that will not be visible in the loading view
+//
+//     - Parameters:
+//     - views: Invisible Views
+//     */
+//    @discardableResult
+//    func setupNotShowingViews(_ views: [UIView]) -> Self {
+//        views.forEach{ $0.isShow = false }
+//        return self
+//    }
 }
 
 // MARK: animation
