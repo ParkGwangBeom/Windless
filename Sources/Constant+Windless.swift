@@ -2,7 +2,7 @@
 //  Constant+Windless.swift
 //  Windless-iOS
 //
-//  Created by NAVER on 2017. 11. 13..
+//  Created by gwangbeom on 2017. 11. 13..
 //  Copyright © 2017년 Windless. All rights reserved.
 //
 
