@@ -30,9 +30,6 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="mZo-zr-BnO"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-UO-ya8">
                                         <rect key="frame" x="20" y="228" width="335" height="21"/>
@@ -43,9 +40,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GwI-Py-Pr3">
                                         <rect key="frame" x="20" y="269" width="60" height="60"/>
@@ -54,9 +48,6 @@
                                             <constraint firstAttribute="width" constant="60" id="Nbv-OL-rqn"/>
                                             <constraint firstAttribute="height" constant="60" id="zwp-xK-k3U"/>
                                         </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJg-eA-gNL">
                                         <rect key="frame" x="90" y="273.5" width="265" height="21"/>
@@ -67,9 +58,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3F-0D-kAP">
                                         <rect key="frame" x="90" y="303.5" width="50" height="21"/>
@@ -115,6 +103,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rz6-UO-ya8" secondAttribute="trailing" constant="20" id="2v9-gZ-pf8"/>
@@ -137,6 +126,9 @@
                                     <constraint firstAttribute="trailing" secondItem="kDd-wm-28Y" secondAttribute="trailing" constant="20" id="jWR-Rt-EoB"/>
                                     <constraint firstItem="GwI-Py-Pr3" firstAttribute="top" secondItem="rz6-UO-ya8" secondAttribute="bottom" constant="20" id="tUt-zj-ts9"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="NO"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Okc-qQ-Huu" appends="YES" id="iW1-4e-GDg"/>
                                 </connections>
@@ -152,6 +144,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="5gL-qF-roc"/>
                     <connections>
+                        <outlet property="contentsView" destination="cAP-1T-SSs" id="qwQ-2K-FLh"/>
                         <outlet property="view1" destination="Ure-eB-OIx" id="Qso-9G-R5n"/>
                         <outlet property="view2" destination="rz6-UO-ya8" id="CVd-l4-xOC"/>
                         <outlet property="view3" destination="LJg-eA-gNL" id="e1u-wB-AWG"/>

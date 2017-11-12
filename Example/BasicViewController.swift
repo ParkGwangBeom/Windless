@@ -11,6 +11,7 @@ import Windless
 
 class BasicViewController: UIViewController {
 
+    @IBOutlet weak var contentsView: UIView!
     @IBOutlet weak var view1: UIImageView!
     @IBOutlet weak var view2: UILabel!
     @IBOutlet weak var view3: UILabel!
@@ -23,20 +24,13 @@ class BasicViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Basic"
         
-        view.windless
-            .apply {
-                $0.direction = .right
-                $0.beginTime = 2
-                $0.duration = 3
-                $0.animationLayerOpacity = 0.5
-                $0.cornerRadius = 3
-            }
+        contentsView.windless
+            .setupWindlessableViews([view2, view3, view4, view5, view6])
             .start()
-        
     }
     
     @IBAction func tapped(_ sender: Any) {
         flag = !flag
-        flag ? view.windless.start() : view.windless.end()
+        flag ? contentsView.windless.start() : contentsView.windless.end()
     }
 }

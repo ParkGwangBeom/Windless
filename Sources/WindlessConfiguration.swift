@@ -11,7 +11,7 @@ import UIKit
 /**
  Objects that define windless animations and skeletons
  */
-public class WindlessConfiguration: WindlessType {
+public class WindlessConfiguration {
     
     /// The direction of windless animation. Defaults to rightDiagonal.
     public var direction: WindlessDirection = .rightDiagonal
@@ -39,8 +39,4 @@ public class WindlessConfiguration: WindlessType {
     
     /// The opacity of the content while it is windless. Defaults to 0.8.
     public var animationLayerOpacity: CGFloat = 0.8
-    
-    /// Mask layer cornerRadius default 0
-    public var cornerRadius: CGFloat = 0
 }
-
