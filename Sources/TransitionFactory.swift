@@ -12,7 +12,6 @@ class TransitionFactory {
     
     static func fade() -> CATransition {
         let transition = CATransition()
-        transition.duration = 0.4
         transition.type = kCATransitionFade
         return transition
     }
