@@ -17,7 +17,15 @@ class CollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Collection"
-        collectionView.windless.start()
+        collectionView.windless
+            .apply {
+                $0.direction = .down
+                $0.beginTime = 2
+                $0.duration = 3
+                $0.animationLayerOpacity = 0.5
+                $0.cornerRadius = 3
+            }
+            .start()
     }
     
     @IBAction func tapped(_ sender: Any) {
