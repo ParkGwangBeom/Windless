@@ -57,7 +57,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Windless', '~> 0.1.2'
+    pod 'Windless', '~> 0.1.3'
 end
 ```
 
@@ -81,7 +81,7 @@ $ brew install carthage
 To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Interactive-Studio/Windless" ~> 0.1.2
+github "Interactive-Studio/Windless" ~> 0.1.3
 ```
 
 Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
@@ -151,27 +151,34 @@ class ViewController: UIViewController {
 There are several customizable options in **Windless**.
 
 ```swift
-protocol WindlessType {
-
-    var direction: WindlessDirection { get set }
-
-    var speed: Float { get set }
+public class WindlessConfiguration {
     
-    var beginTime: CFTimeInterval { get set }
+    /// The direction of windless animation. Defaults to rightDiagonal.
+    public var direction: WindlessDirection = .rightDiagonal
     
-    var duration: CFTimeInterval { get set }
+    /// The speed of windless animation. Defaults to 1.
+    public var speed: Float = 1
     
-    var pauseDuration: CFTimeInterval { get set }
+    /// The duration of the fade used when windless begins. Defaults to 0.
+    public var beginTime: CFTimeInterval = 0
     
-    var timingFuction: CAMediaTimingFunction { get set }
+    /// The time interval windless in seconds. Defaults to 4.
+    public var duration: CFTimeInterval = 4
     
-    var animationLayerColor: UIColor { get set }
+    /// The time interval between windless in seconds. Defaults to 2.
+    public var pauseDuration: CFTimeInterval = 2
     
-    var animationBackgroundColor: UIColor { get set }
+    /// gradient animation timingFunction default easeOut
+    public var timingFuction: CAMediaTimingFunction = .easeOut
     
-    var animationLayerOpacity: CGFloat { get set}
+    /// gradient layer center color default .lightGray
+    public var animationLayerColor: UIColor = .lightGray
     
-    var cornerRadius: CGFloat { get set }
+    /// Mask layer background color default .groupTableViewBackground
+    public var animationBackgroundColor: UIColor = .groupTableViewBackground
+    
+    /// The opacity of the content while it is windless. Defaults to 0.8.
+    public var animationLayerOpacity: CGFloat = 0.8
 }
 ```
 
