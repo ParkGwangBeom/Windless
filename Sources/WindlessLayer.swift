@@ -9,114 +9,26 @@
 import UIKit
 
 class WindlessLayer: CALayer {
-
-    fileprivate var gradientLayer: WindlessGradientLayer?
-    fileprivate var coverLayer:  CAShapeLayer?
-    fileprivate var windlessableLayers: [CALayer] = []
-    fileprivate var notWindlessableLayers: [CALayer] = []
-    fileprivate var configuration = WindlessConfiguration()
-    var windless: Bool = false {
-        didSet {
-            guard oldValue != windless else {
-                return
-            }
-            animate(windless)
+    
+    private var context: WindlessContext
+    init(frame: CGRect, context: WindlessContext) {
+        self.context = context
+        super.init()
+        self.frame = frame
+        addSublayer(context.animationLayer)
+        addSublayer(context.coverLayer)
+        Maker.makeNotWindlessableLayers(in: context.container).forEach {
+            context.coverLayer.addSublayer($0)
         }
     }
     
-    convenience required init(frame: CGRect, configuration: WindlessConfiguration) {
-        self.init()
-        self.frame = frame
-        self.configuration = configuration
-        setupSublayers()
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSublayers() {
         super.layoutSublayers()
-        layoutIfNeeded()
-        setupSublayersPosition()
-        setupMaskLayer()
-        setupShowingLayer()
-    }
-}
-
-// MARK: internal
-extension WindlessLayer {
-    
-    func updateGradientLayer() {
-        gradientLayer?.update()
-    }
-    
-    func updateCoverLayerColor(_ color: UIColor) {
-        coverLayer?.backgroundColor = color.cgColor
-    }
-    
-    func updateWindlessableLayers(_ layers: [CALayer]) {
-        windlessableLayers = layers
-    }
-    
-    func updateNotWindlessableLayers(_ layers: [CALayer]) {
-        notWindlessableLayers = layers
-    }
-}
-
-// MARK: private
-private extension WindlessLayer {
-    
-    var subLayersPath: UIBezierPath {
-        let path = UIBezierPath(rect: bounds)
-        path.usesEvenOddFillRule = true
-        windlessableLayers.forEach {
-            let rect = $0.convert($0.bounds, to: self)
-            let subviewPath = UIBezierPath(roundedRect: rect, cornerRadius: configuration.cornerRadius)
-            path.append(subviewPath)
-        }
-        return path
-    }
-    
-    func setupMaskLayer() {
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = subLayersPath.cgPath
-        maskLayer.fillRule = kCAFillRuleEvenOdd
-        coverLayer?.mask = maskLayer
-    }
-    
-    func setupShowingLayer() {
-        notWindlessableLayers.forEach {
-            let copy = CALayer(layer: $0)
-            copy.contents = $0.contents
-            copy.contentsGravity = $0.contentsGravity
-            copy.backgroundColor = $0.backgroundColor
-            copy.cornerRadius = $0.cornerRadius
-            copy.contentsScale = $0.contentsScale
-            copy.frame = $0.convert($0.bounds, to: self)
-            coverLayer?.addSublayer(copy)
-        }
-    }
-    
-    func setupSublayers() {
-        let gradientLayer = WindlessGradientLayer(frame: frame, configuration: configuration)
-        let coverLayer = CAShapeLayer()
-        addSublayer(gradientLayer)
-        addSublayer(coverLayer)
-        self.gradientLayer = gradientLayer
-        self.coverLayer = coverLayer
-    }
-
-    func setupSublayersPosition() {
-        gradientLayer?.frame = bounds
-        coverLayer?.frame = bounds
-    }
-    
-    func animate(_ flag: Bool) {
-        CATransaction.begin()
-        CATransaction.setAnimationDuration(0.4)
-        CATransaction.setCompletionBlock {
-            flag ? self.gradientLayer?.show() : self.gradientLayer?.hide()
-        }
-        let alpha: Float = flag ? 1 : 0
-        gradientLayer?.opacity = alpha
-        coverLayer?.opacity = alpha
-        CATransaction.commit()
+        context.updateLayerFrame(bounds)
+        context.updateMask()
     }
 }

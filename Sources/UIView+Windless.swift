@@ -13,17 +13,7 @@ public extension UIView {
     private struct AssociatedKeys {
         static var isWindlessable = "isWindlessableKey"
         static var windless = "windlessKey"
-        static var showing = "showingKey"
     }
-    
-//    /**
-//     Whether the view is visible in the loading view state
-//     If it is false, the view is not visible in the loading view. Default true
-//     */
-//    @IBInspectable var isShow: Bool {
-//        get { return objc_getAssociatedObject(self, &AssociatedKeys.showing) as? Bool ?? true }
-//        set { objc_setAssociatedObject(self, &AssociatedKeys.showing, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
-//    }
     
     /**
      **isWindlessable** allows the view to be composed of skeletons.
@@ -39,14 +29,10 @@ public extension UIView {
      */
     var windless: Windless {
         guard let windless = objc_getAssociatedObject(self, &AssociatedKeys.windless) as? Windless else {
-            let windless = Windless(contentsView: self)
+            let windless = Windless(container: self)
             objc_setAssociatedObject(self, &AssociatedKeys.windless, windless, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return windless
         }
         return windless
-    }
-    
-    internal var allSubviews: [UIView] {
-        return [self] + subviews.flatMap { $0.allSubviews }
     }
 }

@@ -30,9 +30,8 @@ class TableViewController: UIViewController {
         tableView.windless
             .apply {
                 $0.beginTime = 2
-                $0.duration = 3
+                $0.duration = 4
                 $0.animationLayerOpacity = 0.5
-                $0.cornerRadius = 3
             }
             .start()
     }

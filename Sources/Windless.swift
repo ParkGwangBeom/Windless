@@ -1,6 +1,6 @@
 //
 //  Windless.swift
-//  Windless
+//  Windless-iOS
 //
 //  Created by gwangbeom on 2017. 11. 5..
 //  Copyright © 2017년 Windless. All rights reserved.
@@ -10,42 +10,16 @@ import UIKit
 
 public class Windless {
     
-    fileprivate weak var contentsView: UIView!
-    fileprivate var windlessLayer: WindlessLayer?
-    fileprivate var configuration = WindlessConfiguration()
-
-    init(contentsView: UIView) {
-        contentsView.layoutIfNeeded()
-        self.contentsView = contentsView
-        setupWindlessLayer()
-    }
-}
-
-private extension Windless {
+    fileprivate var configuration: WindlessConfiguration
+    fileprivate var context: WindlessContext
+    fileprivate var windlessLayer: WindlessLayer
     
-    func updateLayer() {
-        windlessLayer?.updateGradientLayer()
-        windlessLayer?.updateCoverLayerColor(contentsView.backgroundColor ?? .white)
-        // TODO: Refactoring
-        windlessLayer?.updateWindlessableLayers(contentsView.allSubviews.filter{ $0.isWindlessable }.flatMap{ $0.layer })
-        windlessLayer?.updateNotWindlessableLayers(contentsView.allSubviews.filter{ !$0.isWindlessable }.flatMap{
-            let layer = $0.layer
-            layer.backgroundColor = $0.backgroundColor?.cgColor
-            return layer
-        })
-    }
-    
-    func setupWindlessLayer() {
-        let layer = WindlessLayer(frame: contentsView.bounds, configuration: configuration)
-        contentsView.layer.addSublayer(layer)
-        windlessLayer = layer
-    }
-    
-    func setupScrollEnabled(_ enabled: Bool) {
-        guard let scrollView = contentsView as? UIScrollView else {
-            return
-        }
-        scrollView.isScrollEnabled = enabled
+    init(container: UIView) {
+        container.setNeedsLayout()
+        container.layoutIfNeeded()
+        configuration = WindlessConfiguration()
+        context = WindlessContext(container: container)
+        windlessLayer = WindlessLayer(frame: container.bounds, context: context)
     }
 }
 
@@ -56,11 +30,11 @@ public extension Windless {
      **apply** helps you define the information you need for windless.
      
      - Parameters:
-         - config: WindlessConfiguration
+     - config: WindlessConfiguration
      */
     @discardableResult
-    func apply(_ config: (WindlessConfiguration) -> Void) -> Self {
-        config(configuration)
+    func apply(_ setup: (WindlessConfiguration) -> Void) -> Self {
+        setup(configuration)
         return self
     }
     
@@ -68,48 +42,57 @@ public extension Windless {
      Set the isWindlessable value of views to true
      
      - Parameters:
-         - views: Views that will be the skeleton of the loading view
+     - views: Views that will be the skeleton of the loading view
      */
     @discardableResult
     func setupWindlessableViews(_ views: [UIView]) -> Self {
         views.forEach { $0.isWindlessable = true }
         return self
     }
-    
-//    /**
-//     Set up views that will not be visible in the loading view
-//
-//     - Parameters:
-//     - views: Invisible Views
-//     */
-//    @discardableResult
-//    func setupNotShowingViews(_ views: [UIView]) -> Self {
-//        views.forEach{ $0.isShow = false }
-//        return self
-//    }
 }
 
 // MARK: animation
 public extension Windless {
     
+    // TODO: animation custom
     /// Start windless animation
     func start() {
-        setupScrollEnabled(false)
-        updateLayer()
-        UIView.transition(with: contentsView, duration: 0.4, options: [], animations: {
-            self.windlessLayer?.isHidden = false
-        }) { _ in
-            self.windlessLayer?.windless = true
+        context.updateAnimationLayer(configuration: configuration)
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            let animation = AnimationFactory(configuration: self.configuration).locationAnimation()
+            self.context.start(animation)
+            self.setupScrollEnabled(false)
         }
+        let transition = TransitionFactory.fade()
+        context.container.layer.add(transition, forKey: TransitionKeys.fade)
+        context.container.layer.addSublayer(windlessLayer)
+        CATransaction.commit()
     }
     
     /// End windless animation
     func end() {
-        UIView.transition(with: contentsView, duration: 0.4, options: [], animations: {
-            self.windlessLayer?.isHidden = true
-        }) { _ in
-            self.setupScrollEnabled(true)
-            self.windlessLayer?.windless = false
+        CATransaction.begin()
+        CATransaction.setCompletionBlock { [weak self] in
+            self?.context.end()
+            self?.setupScrollEnabled(true)
         }
+        let transition = TransitionFactory.fade()
+        context.container.layer.add(transition, forKey: TransitionKeys.fade)
+        windlessLayer.removeFromSuperlayer()
+        CATransaction.commit()
+    }
+}
+
+private extension Windless {
+    
+    func setupScrollEnabled(_ flag: Bool) {
+        guard let scrollView = context.container as? UIScrollView else {
+            return
+        }
+        scrollView.isScrollEnabled = flag
     }
 }
