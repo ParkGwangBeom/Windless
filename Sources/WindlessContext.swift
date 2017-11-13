@@ -44,13 +44,15 @@ extension WindlessContext {
         animationLayer.colors = [configuration.animationBackgroundColor,
                                  configuration.animationLayerColor.withAlphaComponent(configuration.animationLayerOpacity),
                                  configuration.animationBackgroundColor].flatMap{ $0.cgColor }
-        animationLayer.locations = DefaultAnimationValue.Locations.from
+        animationLayer.locations = DefaultValue.Animation.Locations.from
         animationLayer.backgroundColor = configuration.animationBackgroundColor.cgColor
     }
     
     func updateMask() {
+        let path = Maker.Path.makeWindlessableLayersPath(in: container)
+        appendMultilinePathIfNeed(at: path)
         let maskLayer = CAShapeLayer()
-        maskLayer.path = Maker.makeWindlessableLayersPath(in: container).cgPath
+        maskLayer.path = path.cgPath
         maskLayer.fillRule = kCAFillRuleEvenOdd
         coverLayer.mask = maskLayer
     }
@@ -70,5 +72,15 @@ extension WindlessContext {
     
     func end() {
         animationLayer.removeAnimation(forKey: AnimationKeys.locations)
+    }
+}
+
+extension WindlessContext {
+    
+    func appendMultilinePathIfNeed(at path: UIBezierPath) {
+        container.subviewsHierarchy.filter{ $0.isWindlessable && $0 is CanBeMultipleLines }.forEach {
+            let rect = $0.convert($0.bounds, to: container)
+            ($0 as? CanBeMultipleLines)?.addMultipleLinePaths(path: path, frame: rect)
+        }
     }
 }
