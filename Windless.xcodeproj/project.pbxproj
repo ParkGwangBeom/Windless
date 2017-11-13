@@ -17,6 +17,8 @@
 		4A1C00C01FA102E5006DEA4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C00BF1FA102E5006DEA4C /* Assets.xcassets */; };
 		4A1C00C31FA102E5006DEA4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C00C11FA102E5006DEA4C /* LaunchScreen.storyboard */; };
 		4A1C00CD1FA1AB80006DEA4C /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C00CC1FA1AB80006DEA4C /* TableViewController.swift */; };
+		4A29B6E31FB9D13300F5B6E4 /* MultipleLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A29B6E21FB9D13300F5B6E4 /* MultipleLines.swift */; };
+		4A29B6E61FBA018C00F5B6E4 /* MultipleLines.swift in Headers */ = {isa = PBXBuildFile; fileRef = 4A29B6E21FB9D13300F5B6E4 /* MultipleLines.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A2F5D9E1FB8686800E0A6F5 /* WindlessContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2F5D9D1FB8686800E0A6F5 /* WindlessContext.swift */; };
 		4A51527A1FB88F3400BD905F /* AnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5152781FB88EE400BD905F /* AnimationFactory.swift */; };
 		4A51527B1FB892EA00BD905F /* Windless.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Windless.framework */; };
@@ -77,6 +79,7 @@
 		4A1C00C21FA102E5006DEA4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A1C00C41FA102E5006DEA4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A1C00CC1FA1AB80006DEA4C /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		4A29B6E21FB9D13300F5B6E4 /* MultipleLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLines.swift; sourceTree = "<group>"; };
 		4A2F5D9D1FB8686800E0A6F5 /* WindlessContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindlessContext.swift; sourceTree = "<group>"; };
 		4A5152781FB88EE400BD905F /* AnimationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationFactory.swift; sourceTree = "<group>"; };
 		4A51527F1FB8935F00BD905F /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
@@ -183,11 +186,12 @@
 				4AE437C61FB2B50200E22C5A /* WindlessOptions.swift */,
 				4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */,
 				4A51527F1FB8935F00BD905F /* Maker.swift */,
+				4A29B6E21FB9D13300F5B6E4 /* MultipleLines.swift */,
 				4A5152781FB88EE400BD905F /* AnimationFactory.swift */,
 				4A5152831FB8AEF300BD905F /* TransitionFactory.swift */,
 				4AE437C11FB219FF00E22C5A /* UIView+Windless.swift */,
-				4AE437C41FB21FF800E22C5A /* CAMediaTimingFunction+Windless.swift */,
 				4A5152811FB8AED700BD905F /* Constant+Windless.swift */,
+				4AE437C41FB21FF800E22C5A /* CAMediaTimingFunction+Windless.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -225,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A68FF851FB6193000F637B0 /* UIView+Windless.swift in Headers */,
+				4A29B6E61FBA018C00F5B6E4 /* MultipleLines.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A5152841FB8AEF300BD905F /* TransitionFactory.swift in Sources */,
+				4A29B6E31FB9D13300F5B6E4 /* MultipleLines.swift in Sources */,
 				4A2F5D9E1FB8686800E0A6F5 /* WindlessContext.swift in Sources */,
 				8933C7851EB5B820000D00A4 /* Windless.swift in Sources */,
 				4A51527A1FB88F3400BD905F /* AnimationFactory.swift in Sources */,
