@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,17 +27,17 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Ure-eB-OIx">
-                                        <rect key="frame" x="20" y="28" width="335" height="190"/>
+                                        <rect key="frame" x="20" y="28" width="335" height="222.5"/>
                                         <color key="backgroundColor" red="0.46666666870000001" green="0.76470589639999997" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="190" id="mZo-zr-BnO"/>
+                                            <constraint firstAttribute="width" secondItem="Ure-eB-OIx" secondAttribute="height" multiplier="640:425" id="mO8-KD-lsv"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isWindlessable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="GwI-Py-Pr3">
-                                        <rect key="frame" x="20" y="248" width="60" height="60"/>
+                                        <rect key="frame" x="20" y="280.5" width="60" height="60"/>
                                         <color key="backgroundColor" red="0.46666666870000001" green="0.76470589639999997" blue="0.26666668059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="Nbv-OL-rqn"/>
@@ -47,7 +48,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windless" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LJg-eA-gNL">
-                                        <rect key="frame" x="90" y="252.5" width="265" height="21"/>
+                                        <rect key="frame" x="90" y="285" width="265" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="Xo4-tn-QBy"/>
                                         </constraints>
@@ -59,7 +60,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3F-0D-kAP">
-                                        <rect key="frame" x="90" y="282.5" width="50" height="21"/>
+                                        <rect key="frame" x="90" y="315" width="50" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="PTL-5C-cRb"/>
                                             <constraint firstAttribute="height" constant="21" id="oVz-WM-b5r"/>
@@ -72,7 +73,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017.11.03" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDd-wm-28Y">
-                                        <rect key="frame" x="150" y="283" width="205" height="21"/>
+                                        <rect key="frame" x="150" y="315.5" width="205" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="cgZ-yO-tDP"/>
                                         </constraints>
@@ -84,7 +85,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Kt-km-Vqg">
-                                        <rect key="frame" x="20" y="328" width="335" height="150"/>
+                                        <rect key="frame" x="20" y="360.5" width="335" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="owN-RY-e37"/>
                                         </constraints>
@@ -96,7 +97,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="s2G-PI-kw9">
-                                        <rect key="frame" x="297" y="493" width="58" height="58"/>
+                                        <rect key="frame" x="297" y="525.5" width="58" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="58" id="As0-7T-E7R"/>
                                             <constraint firstAttribute="width" constant="58" id="q2i-MB-KpX"/>
@@ -106,7 +107,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Star" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CME-wn-Go8">
-                                        <rect key="frame" x="20" y="512" width="267" height="21"/>
+                                        <rect key="frame" x="20" y="544.5" width="267" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
