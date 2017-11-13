@@ -10,7 +10,6 @@
 		4A1179411FAEEFA000164FC4 /* WindlessLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179401FAEEFA000164FC4 /* WindlessLayer.swift */; };
 		4A1179431FAEFCC700164FC4 /* WindlessConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */; };
 		4A1179451FAF1EBB00164FC4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179441FAF1EBB00164FC4 /* ListViewController.swift */; };
-		4A1179471FAF2A5600164FC4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1179461FAF2A5600164FC4 /* CollectionViewController.swift */; };
 		4A1C00B91FA102E5006DEA4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C00B81FA102E5006DEA4C /* AppDelegate.swift */; };
 		4A1C00BB1FA102E5006DEA4C /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1C00BA1FA102E5006DEA4C /* BasicViewController.swift */; };
 		4A1C00BE1FA102E5006DEA4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A1C00BC1FA102E5006DEA4C /* Main.storyboard */; };
@@ -70,7 +69,6 @@
 		4A1179401FAEEFA000164FC4 /* WindlessLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindlessLayer.swift; sourceTree = "<group>"; };
 		4A1179421FAEFCC700164FC4 /* WindlessConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindlessConfiguration.swift; sourceTree = "<group>"; };
 		4A1179441FAF1EBB00164FC4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		4A1179461FAF2A5600164FC4 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		4A1C00B61FA102E5006DEA4C /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A1C00B81FA102E5006DEA4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A1C00BA1FA102E5006DEA4C /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				4A1179441FAF1EBB00164FC4 /* ListViewController.swift */,
 				4A1C00BA1FA102E5006DEA4C /* BasicViewController.swift */,
 				4A1C00CC1FA1AB80006DEA4C /* TableViewController.swift */,
-				4A1179461FAF2A5600164FC4 /* CollectionViewController.swift */,
 				4A1C00BC1FA102E5006DEA4C /* Main.storyboard */,
 				4A1C00BF1FA102E5006DEA4C /* Assets.xcassets */,
 				4A1C00C11FA102E5006DEA4C /* LaunchScreen.storyboard */,
@@ -371,7 +368,6 @@
 				4A1C00CD1FA1AB80006DEA4C /* TableViewController.swift in Sources */,
 				4A1C00B91FA102E5006DEA4C /* AppDelegate.swift in Sources */,
 				4A1179451FAF1EBB00164FC4 /* ListViewController.swift in Sources */,
-				4A1179471FAF2A5600164FC4 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

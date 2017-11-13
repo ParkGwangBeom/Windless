@@ -11,10 +11,9 @@ import UIKit
 enum Items: String {
     case basic
     case table
-    case collection
     
     static var all: [Items] {
-        return [.basic, .table, .collection]
+        return [.basic, .table]
     }
 }
 
