@@ -49,7 +49,7 @@ class AnimationFactory {
 extension AnimationFactory {
     
     func locationAnimation() -> CAAnimation {
-        let animation = makeAnimation(type: .locations, from: DefaultAnimationValue.Locations.from, to: DefaultAnimationValue.Locations.to)
+        let animation = makeAnimation(type: .locations, from: DefaultValue.Animation.Locations.from, to: DefaultValue.Animation.Locations.to)
         return makeGroupAnimation([animation])
     }
 }
