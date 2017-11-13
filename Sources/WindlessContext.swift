@@ -16,8 +16,8 @@ enum LayerType {
 class WindlessContext {
     
     weak var container: UIView!
-    fileprivate var animationLayer: CAGradientLayer = CAGradientLayer()
-    fileprivate var coverLayer: CAShapeLayer = CAShapeLayer()
+    fileprivate var animationLayer = CAGradientLayer()
+    fileprivate var coverLayer = CAShapeLayer()
     
     init(container: UIView) {
         self.container = container

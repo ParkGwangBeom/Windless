@@ -21,7 +21,7 @@ enum AnimationType: String {
 // TODO: add animation
 class AnimationFactory {
     
-    var configuration: WindlessConfiguration
+    fileprivate var configuration: WindlessConfiguration
     init(configuration: WindlessConfiguration) {
         self.configuration = configuration
     }
