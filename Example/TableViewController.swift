@@ -60,4 +60,9 @@ class TestCell: UITableViewCell {
     @IBOutlet weak var view2: UILabel!
     @IBOutlet weak var view3: UILabel!
     @IBOutlet weak var view4: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        view1.layer.cornerRadius = view1.frame.width / 2
+    }
 }
