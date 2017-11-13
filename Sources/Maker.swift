@@ -33,6 +33,7 @@ struct Maker {
                     copy.contentsGravity = $0.layer.contentsGravity
                     copy.backgroundColor = $0.backgroundColor?.cgColor
                     copy.cornerRadius = $0.layer.cornerRadius
+                    copy.masksToBounds = $0.layer.masksToBounds
                     copy.contentsScale = $0.layer.contentsScale
                     copy.frame = $0.convert($0.bounds, to: container)
                     return copy
