@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: Refactorig
 struct Maker {
     
     struct Path {

@@ -18,7 +18,7 @@ public protocol CanBeMultipleLines {
 extension CanBeMultipleLines {
     
     // TODO: Refactoring
-    func addMultipleLinePaths(path: UIBezierPath, frame: CGRect) {
+    func appendMultilineLayersPath(on path: UIBezierPath, frame: CGRect) {
         let numberOfLines = Int(round(frame.height / (lineHeight + spacing)))
         for index in 0..<numberOfLines {
             let spacingAndHeight: CGFloat = lineHeight + spacing

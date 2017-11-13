@@ -50,7 +50,7 @@ extension WindlessContext {
     
     func updateMask() {
         let path = Maker.Path.makeWindlessableLayersPath(in: container)
-        appendMultilinePathIfNeed(at: path)
+        appendMultilineLayersPathIfNeeded(on: path)
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         maskLayer.fillRule = kCAFillRuleEvenOdd
@@ -75,12 +75,13 @@ extension WindlessContext {
     }
 }
 
-extension WindlessContext {
+// TODO: Refactorig
+private extension WindlessContext {
     
-    func appendMultilinePathIfNeed(at path: UIBezierPath) {
+    func appendMultilineLayersPathIfNeeded(on path: UIBezierPath) {
         container.subviewsHierarchy.filter{ $0.isWindlessable && $0 is CanBeMultipleLines }.forEach {
             let rect = $0.convert($0.bounds, to: container)
-            ($0 as? CanBeMultipleLines)?.addMultipleLinePaths(path: path, frame: rect)
+            ($0 as? CanBeMultipleLines)?.appendMultilineLayersPath(on: path, frame: rect)
         }
     }
 }
