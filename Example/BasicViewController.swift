@@ -25,9 +25,6 @@ class BasicViewController: UIViewController {
         view4.layer.cornerRadius = view4.frame.width / 2
         
         contentsView.windless
-            .apply {
-                $0.direction = .right
-            }
             .start()
     }
     
