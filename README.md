@@ -152,12 +152,40 @@ The `isWindlessable` value determines how the loading view looks. The images bel
 
 > ```isWindlessable```= 🌀
 
-| Configuration | Result
-|------- | -------
-|![](Resource/configu1.png) | ![](Resource/result1.png)
-|![](Resource/configu2.png) | ![](Resource/result2.png)
-|![](Resource/configu3.png) | ![](Resource/result3.png)
-
+<table>
+<tr>
+<td width="300">
+<center>Configuration</center>
+</td>
+<td width="300">
+<center>Result</center>
+</td>
+</tr>
+<tr>
+<td width="25%">
+<img src="Resource/configu1.png" align="center" width="200"></img>
+</td>
+<td width="25%">
+<img src="Resource/result1.png" width="200" align="center"></img>
+</td>
+</tr>
+<tr>
+<td width="25%">
+<img src="Resource/configu2.png" width="200" align="center"></img>
+</td>
+<td width="25%">
+<img src="Resource/result2.png" width="200" align="center"></img>
+</td>
+</tr>
+<tr>
+<td width="25%">
+<img src="Resource/configu3.png" width="200" align="center"></img>
+</td>
+<td width="25%">
+<img src="Resource/result3.png" width="200" align="center"></img>
+</td>
+</tr>
+</table>
 
 ### Custom Options
 
