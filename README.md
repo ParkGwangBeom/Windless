@@ -94,6 +94,8 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
+
+
 ### Code
 
 ```swift
@@ -145,19 +147,6 @@ class ViewController: UIViewController {
     }
 }
 ```
-
-### isWindlessable
-
-The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
-
-> ```isWindlessable```= 🌀
-
-| Configuration | Result
-|------- | -------
-|<img src="Resource/configu1.png" width="300"> | <img src="Resource/result1.png" width="300"> 
-|<img src="Resource/configu2.png" width="300"> | <img src="Resource/result2.png" width="300"> 
-|<img src="Resource/configu3.png" width="300"> | <img src="Resource/result3.png" width="300"> 
-
 
 ### Custom Options
 
@@ -220,6 +209,18 @@ class ViewController: UIViewController {
 ```
 
 If you want to know more detailed usage, please refer to Example.
+
+## Screen according to `isWindlessable`
+
+The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
+
+> ```isWindlessable```= 🌀
+
+| Configuration | Result
+|------- | -------
+|<img src="Resource/configu1.png" width="300"> | <img src="Resource/result1.png" width="300"> 
+|<img src="Resource/configu2.png" width="300"> | <img src="Resource/result2.png" width="300"> 
+|<img src="Resource/configu3.png" width="300"> | <img src="Resource/result3.png" width="300"> 
 
 ## Credits
 
