@@ -28,6 +28,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Screen](#screen)
 - [Credits](#credits)
 - [License](#license)
 
@@ -131,7 +132,7 @@ class ViewController: UIViewController {
 
 If you use **Storyboard** or **xib**, you only need to set the `isWindlessable` flag to true for the views you want to show as fake in the view inspector of the view, and you do not have to pass the view through the `setupWindlessableViews` method.
 
-![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example1.png)
+<img src="Resource/example1.png" width="400">
 
 ```swift
 import Windless
@@ -210,7 +211,7 @@ class ViewController: UIViewController {
 
 If you want to know more detailed usage, please refer to Example.
 
-## Screen according to `isWindlessable`
+## Screen
 
 The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
 
