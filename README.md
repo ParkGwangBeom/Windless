@@ -30,6 +30,7 @@
 - [Usage](#usage)
 - [Looks](#looks)
 - [Credits](#credits)
+- [Communication](#communication)
 - [License](#license)
 
 ## Requirements
