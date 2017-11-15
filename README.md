@@ -28,7 +28,7 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screen](#screen)
+- [Looks](#looks)
 - [Credits](#credits)
 - [License](#license)
 
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
 
 If you want to know more detailed usage, please refer to Example.
 
-## Screen
+## Looks
 
 The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
 
@@ -222,6 +222,12 @@ The `isWindlessable` value determines how the loading view looks. The images bel
 |<img src="Resource/configu1.png" width="300"> | <img src="Resource/result1.png" width="300"> 
 |<img src="Resource/configu2.png" width="300"> | <img src="Resource/result2.png" width="300"> 
 |<img src="Resource/configu3.png" width="300"> | <img src="Resource/result3.png" width="300"> 
+
+## Communication
+
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Credits
 
