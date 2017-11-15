@@ -154,9 +154,9 @@ The `isWindlessable` value determines how the loading view looks. The images bel
 
 | Configuration | Result
 |------- | -------
-|![](Resource/configu1) | ![](Resource/result1)
-|![](Resource/configu2) | ![](Resource/result2)
-|![](Resource/configu3) | ![](Resource/result3)
+|![](Resource/configu1.png) | ![](Resource/result1.png)
+|![](Resource/configu2.png) | ![](Resource/result2.png)
+|![](Resource/configu3.png) | ![](Resource/result3.png)
 
 
 ### Custom Options
