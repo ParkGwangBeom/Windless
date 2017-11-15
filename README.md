@@ -146,6 +146,19 @@ class ViewController: UIViewController {
 }
 ```
 
+### isWindlessable
+
+The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
+
+> ```isWindlessable```= 🌀
+
+| Configuration | Result
+|------- | -------
+|![](Resource/configu1) | ![](Resource/result1)
+|![](Resource/configu2) | ![](Resource/result2)
+|![](Resource/configu3) | ![](Resource/result3)
+
+
 ### Custom Options
 
 There are several customizable options in **Windless**.
