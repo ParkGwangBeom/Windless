@@ -152,40 +152,12 @@ The `isWindlessable` value determines how the loading view looks. The images bel
 
 > ```isWindlessable```= 🌀
 
-<table>
-<tr>
-<td width="300">
-<center>Configuration</center>
-</td>
-<td width="300">
-<center>Result</center>
-</td>
-</tr>
-<tr>
-<td width="25%">
-<img src="Resource/configu1.png" align="center" width="200"></img>
-</td>
-<td width="25%">
-<img src="Resource/result1.png" width="200" align="center"></img>
-</td>
-</tr>
-<tr>
-<td width="25%">
-<img src="Resource/configu2.png" width="200" align="center"></img>
-</td>
-<td width="25%">
-<img src="Resource/result2.png" width="200" align="center"></img>
-</td>
-</tr>
-<tr>
-<td width="25%">
-<img src="Resource/configu3.png" width="200" align="center"></img>
-</td>
-<td width="25%">
-<img src="Resource/result3.png" width="200" align="center"></img>
-</td>
-</tr>
-</table>
+| Configuration | Result
+|------- | -------
+|<img src="Resource/configu1.png" width="300"> | <img src="Resource/result1.png" width="300"> 
+|<img src="Resource/configu2.png" width="300"> | <img src="Resource/result2.png" width="300"> 
+|<img src="Resource/configu3.png" width="300"> | <img src="Resource/result3.png" width="300"> 
+
 
 ### Custom Options
 
