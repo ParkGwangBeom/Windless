@@ -59,7 +59,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Windless', '~> 0.1.4'
+    pod 'Windless', '~> 0.1.5'
 end
 ```
 
@@ -83,7 +83,7 @@ $ brew install carthage
 To integrate Windless into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Interactive-Studio/Windless" ~> 0.1.4
+github "Interactive-Studio/Windless" ~> 0.1.5
 ```
 
 Run `carthage update` to build the framework and drag the built `Windless.framework` into your Xcode project.
@@ -207,6 +207,21 @@ class ViewController: UIViewController {
             }
             .start()
     }
+}
+```
+
+### MultilineText
+
+Depending on the `lineHeight` value and the` spacing` value, UILabel and UITextView will reconstruct the layout when the windless animation runs.
+
+<img src="Resource/multitext.png" width="400">
+
+```swift
+public protocol CanBeMultipleLines {
+
+    var lineHeight: CGFloat { get set }
+
+    var spacing: CGFloat { get set }
 }
 ```
 
