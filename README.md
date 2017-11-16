@@ -150,6 +150,21 @@ class ViewController: UIViewController {
 }
 ```
 
+### Multiline
+
+Depending on the `lineHeight` value and the` spacing` value, UILabel and UITextView will reconstruct the layout when the windless animation runs.
+
+<img src="Resource/multitext.png" width="400">
+
+```swift
+public protocol CanBeMultipleLines {
+
+    var lineHeight: CGFloat { get set }
+
+    var spacing: CGFloat { get set }
+}
+```
+
 ### Custom Options
 
 There are several customizable options in **Windless**.
@@ -207,21 +222,6 @@ class ViewController: UIViewController {
             }
             .start()
     }
-}
-```
-
-### Multiline
-
-Depending on the `lineHeight` value and the` spacing` value, UILabel and UITextView will reconstruct the layout when the windless animation runs.
-
-<img src="Resource/multitext.png" width="400">
-
-```swift
-public protocol CanBeMultipleLines {
-
-    var lineHeight: CGFloat { get set }
-
-    var spacing: CGFloat { get set }
 }
 ```
 
