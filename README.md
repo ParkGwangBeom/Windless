@@ -210,7 +210,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### MultilineText
+### Multiline
 
 Depending on the `lineHeight` value and the` spacing` value, UILabel and UITextView will reconstruct the layout when the windless animation runs.
 
