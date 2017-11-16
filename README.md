@@ -28,7 +28,9 @@
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Looks](#looks)
 - [Credits](#credits)
+- [Communication](#communication)
 - [License](#license)
 
 ## Requirements
@@ -94,6 +96,8 @@ If you prefer not to use either of the aforementioned dependency managers, you c
 
 ## Usage
 
+
+
 ### Code
 
 ```swift
@@ -129,7 +133,7 @@ class ViewController: UIViewController {
 
 If you use **Storyboard** or **xib**, you only need to set the `isWindlessable` flag to true for the views you want to show as fake in the view inspector of the view, and you do not have to pass the view through the `setupWindlessableViews` method.
 
-![Windless](https://github.com/ParkGwangBeom/Windless/blob/master/Resource/example1.png)
+<img src="Resource/example1.png" width="400">
 
 ```swift
 import Windless
@@ -145,19 +149,6 @@ class ViewController: UIViewController {
     }
 }
 ```
-
-### isWindlessable
-
-The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
-
-> ```isWindlessable```= 🌀
-
-| Configuration | Result
-|------- | -------
-|![](Resource/configu1) | ![](Resource/result1)
-|![](Resource/configu2) | ![](Resource/result2)
-|![](Resource/configu3) | ![](Resource/result3)
-
 
 ### Custom Options
 
@@ -220,6 +211,24 @@ class ViewController: UIViewController {
 ```
 
 If you want to know more detailed usage, please refer to Example.
+
+## Looks
+
+The `isWindlessable` value determines how the loading view looks. The images below show how the loading screen will look according to the `isWindlessable` value.
+
+> ```isWindlessable```= 🌀
+
+| Configuration | Result
+|------- | -------
+|<img src="Resource/configu1.png" width="300"> | <img src="Resource/result1.png" width="300"> 
+|<img src="Resource/configu2.png" width="300"> | <img src="Resource/result2.png" width="300"> 
+|<img src="Resource/configu3.png" width="300"> | <img src="Resource/result3.png" width="300"> 
+
+## Communication
+
+- If you **found a bug**, open an issue.
+- If you **have a feature request**, open an issue.
+- If you **want to contribute**, submit a pull request.
 
 ## Credits
 
