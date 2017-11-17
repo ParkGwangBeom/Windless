@@ -165,6 +165,10 @@ public protocol CanBeMultipleLines {
 }
 ```
 
+| Configuration | Result
+|------- | -------
+|<img src="Resource/multi1.png" width="300"> | <img src="Resource/multi2.png" width="300">
+
 ### Custom Options
 
 There are several customizable options in **Windless**.
