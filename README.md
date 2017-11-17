@@ -165,7 +165,7 @@ public protocol CanBeMultipleLines {
 }
 ```
 
-| Configuration | Result
+| Previous | After
 |------- | -------
 |<img src="Resource/multi1.png" width="300"> | <img src="Resource/multi2.png" width="300">
 
