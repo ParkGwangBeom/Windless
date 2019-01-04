@@ -12,7 +12,7 @@ class TransitionFactory {
     
     static func fade() -> CATransition {
         let transition = CATransition()
-        transition.type = kCATransitionFade
+        transition.type = CATransitionType.fade
         return transition
     }
 }
