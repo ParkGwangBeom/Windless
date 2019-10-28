@@ -28,7 +28,7 @@ struct Maker {
         static func makeNotWindlessableLayers(in container: UIView) -> [CALayer] {
             return container.subviewsHierarchy
                 .filter{ !$0.isWindlessable && $0 != container }
-                .flatMap {
+                .compactMap {
                     let copy = CALayer(layer: $0.layer)
                     copy.contents = $0.layer.contents
                     copy.contentsGravity = $0.layer.contentsGravity
