@@ -43,7 +43,7 @@ extension WindlessContext {
         animationLayer.endPoint = configuration.direction.location.end
         animationLayer.colors = [configuration.animationBackgroundColor,
                                  configuration.animationLayerColor.withAlphaComponent(configuration.animationLayerOpacity),
-                                 configuration.animationBackgroundColor].flatMap{ $0.cgColor }
+                                 configuration.animationBackgroundColor].compactMap{ $0.cgColor }
         animationLayer.locations = DefaultValue.Animation.Locations.from
         animationLayer.backgroundColor = configuration.animationBackgroundColor.cgColor
     }
@@ -53,7 +53,7 @@ extension WindlessContext {
         appendMultilineLayersPathIfNeeded(on: path)
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
-        maskLayer.fillRule = kCAFillRuleEvenOdd
+        maskLayer.fillRule = CAShapeLayerFillRule.evenOdd
         coverLayer.mask = maskLayer
     }
     
